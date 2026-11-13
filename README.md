@@ -17,3 +17,14 @@ Site, SEO local, blog et préinscription de Renaissance (POLIVIA). Référence :
 ## Scripts
 
 `pnpm lint` · `pnpm typecheck` · `pnpm test` (Vitest) · `pnpm e2e` (Playwright, contre `E2E_BASE_URL`, une URL déployée).
+
+## Supabase
+
+- Projet dédié Renaissance : `oklbxxixadrqxfhtztut`.
+- Migrations versionnées dans `supabase/migrations/` (création uniquement, non destructives).
+- Client serveur : `src/lib/supabase/server.ts` (`server-only`, clé `service_role`, jamais côté navigateur).
+- Le formulaire public écrit dans `leads` uniquement via une route serveur.
+- Les policies RLS reposent sur `private.current_org_id()` et `private.current_app_role()`
+  (SECURITY DEFINER). Nommée `current_app_role` et non `current_role` : `CURRENT_ROLE` est un mot
+  réservé SQL qui renverrait le rôle Postgres de connexion, pas le rôle métier.
+- Le schéma `payload` est créé vide et fermé à l'API Data ; la RLS de ses tables est activée au point 4.
