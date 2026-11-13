@@ -22,6 +22,7 @@ Site, SEO local, blog et préinscription de Renaissance (POLIVIA). Référence :
 
 - Projet dédié Renaissance : `oklbxxixadrqxfhtztut`.
 - Migrations versionnées dans `supabase/migrations/` (création uniquement, non destructives).
+- Migration appliquée : `20261113234703_foundation` (10 tables, 12 policies, RLS partout, advisors sécurité sans alerte).
 - Client serveur : `src/lib/supabase/server.ts` (`server-only`, clé `service_role`, jamais côté navigateur).
 - Le formulaire public écrit dans `leads` uniquement via une route serveur.
 - Les policies RLS reposent sur `private.current_org_id()` et `private.current_app_role()`
