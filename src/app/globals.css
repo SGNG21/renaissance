@@ -1,0 +1,50 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+/*
+ * Thème Renaissance — tokens du cahier technique (section 3).
+ * Angles vifs, filets 1 px, pas d'ombre, pas de dégradé décoratif.
+ */
+@theme {
+  --color-ink: #20342e;
+  --color-dark: #142820;
+  --color-forest: #253e32;
+  --color-forest-hover: #435e4d;
+  --color-gold: #bba27c;
+  --color-gold-light: #cbb89b;
+  --color-ivory: #f5f2ea;
+  --color-paper: #fbf9f4;
+  --color-line: #d9d7ce;
+  --color-sage: #637169;
+
+  --font-serif: var(--font-italiana), Georgia, serif;
+  --font-sans: var(--font-manrope), Arial, sans-serif;
+
+  --radius: 0px;
+  --container-site: 1380px;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    background: var(--color-paper);
+    color: var(--color-ink);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+  }
+}
+
+@utility container-site {
+  width: min(var(--container-site), calc(100% - 100px));
+  margin-inline: auto;
+  @media (max-width: 750px) {
+    width: calc(100% - 40px);
+  }
+}
