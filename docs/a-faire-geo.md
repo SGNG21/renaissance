@@ -43,7 +43,11 @@ l'absence de clé est journalisée à chaque envoi.
 | `N8N_WEBHOOK_SECRET` | même valeur que `RENAISSANCE_WEBHOOK_SECRET` | Prod + Preview, **Sensitive** |
 | `TURNSTILE_SECRET_KEY` | clé secrète Turnstile | Prod + Preview, **Sensitive** |
 | `NEXT_PUBLIC_TURNSTILE_SITE_KEY` | clé publique Turnstile | Prod + Preview |
-| `SITE_URL` | `https://renaissance-formation.fr` | Prod |
+| `SITE_URL` | *(optionnel)* seulement pour une recette sur un autre domaine | — |
+
+Les canoniques, le sitemap et Open Graph utilisent `renaissance-formation.fr` par
+défaut : rien à régler pour le lancement. `SITE_URL` ne sert qu'à forcer un autre
+domaine en recette.
 
 Rappel : une variable ajoutée ne prend effet qu'au **build suivant**. Un redéploiement
 est nécessaire après chaque modification.
