@@ -3,6 +3,7 @@ import { fileURLToPath } from "node:url";
 
 import { postgresAdapter } from "@payloadcms/db-postgres";
 import { lexicalEditor } from "@payloadcms/richtext-lexical";
+import { fr } from "@payloadcms/translations/languages/fr";
 import { buildConfig } from "payload";
 import sharp from "sharp";
 
@@ -22,8 +23,9 @@ export default buildConfig({
       titleSuffix: " — Renaissance",
     },
   },
-  // Back-office en français.
-  i18n: { fallbackLanguage: "fr" },
+  // Back-office en français : seule langue proposée, quelle que soit la
+  // langue du navigateur (fallbackLanguage seul ne suffisait pas).
+  i18n: { supportedLanguages: { fr }, fallbackLanguage: "fr" },
   collections: [Pages, Articles, ZonesSeo, Medias, Users],
   editor: lexicalEditor(),
   secret: process.env.PAYLOAD_SECRET ?? "",
