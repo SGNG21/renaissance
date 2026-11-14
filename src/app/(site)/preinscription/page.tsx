@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
-import { ACompleter } from "@/components/renaissance/a-completer";
+import { Suspense } from "react";
+import { FormulairePreinscription } from "@/components/renaissance/formulaire-preinscription";
 import { PageHeader } from "@/components/renaissance/page-header";
+import { Reveal } from "@/components/renaissance/reveal";
 
 export const metadata: Metadata = {
   title: "Préinscription",
@@ -9,6 +11,8 @@ export const metadata: Metadata = {
 };
 
 export default function PreinscriptionPage() {
+  const cleTurnstile = process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY;
+
   return (
     <main>
       <PageHeader
@@ -24,18 +28,27 @@ export default function PreinscriptionPage() {
       />
 
       <section className="bg-ivory py-[85px] lg:py-[140px]">
-        <div className="container-site">
-          <ACompleter titre="Formulaire en cours de construction" className="max-w-[760px]">
-            <p>
-              Le formulaire de préinscription est développé au point 7 du cahier technique :
-              validation Zod côté serveur, anti-spam Turnstile, écriture du lead via une route
-              serveur, puis webhook n8n et emails Brevo.
+        <div className="container-site grid grid-cols-1 items-start gap-[55px] lg:grid-cols-2 lg:gap-[12%]">
+          <Reveal>
+            <p className="max-w-[520px] text-[14px] leading-[2] text-sage">
+              Après votre envoi, nous revenons vers vous pour échanger sur votre situation, vos
+              envies et les contours de votre projet. Aucune inscription définitive n&apos;est
+              engagée à ce stade.
             </p>
-            <p className="mt-3">
-              Aucun formulaire factice n&apos;est affiché ici : il serait trompeur de recueillir
-              des coordonnées qui ne seraient pas transmises.
-            </p>
-          </ACompleter>
+            <div className="mt-8 text-[11px] leading-[1.8] tracking-[0.03em]">
+              <strong>Renaissance</strong>
+              <br />
+              Formations aux métiers de l&apos;accompagnement
+              <br />
+              <span>Informations et préinscriptions sur demande</span>
+            </div>
+          </Reveal>
+
+          <Reveal>
+            <Suspense fallback={null}>
+              <FormulairePreinscription cleTurnstile={cleTurnstile} />
+            </Suspense>
+          </Reveal>
         </div>
       </section>
     </main>
