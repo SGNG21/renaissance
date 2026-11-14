@@ -22,10 +22,27 @@ Site, SEO local, blog et préinscription de Renaissance (POLIVIA). Référence :
 
 - Projet dédié Renaissance : `oklbxxixadrqxfhtztut`.
 - Migrations versionnées dans `supabase/migrations/` (création uniquement, non destructives).
-- Migration appliquée : `20261113234703_foundation` (10 tables, 12 policies, RLS partout, advisors sécurité sans alerte).
+- Migrations appliquées :
+  - `20261113234703_foundation` — 10 tables métier, 12 policies, RLS partout, advisors sans alerte.
+  - `20261114001305_payload_schema` — 16 tables Payload dans le schéma `payload`, RLS activée,
+    aucune policy, aucun privilège `anon`/`authenticated`. Régénération :
+    `scripts/payload-schema/README.md`.
 - Client serveur : `src/lib/supabase/server.ts` (`server-only`, clé `service_role`, jamais côté navigateur).
 - Le formulaire public écrit dans `leads` uniquement via une route serveur.
 - Les policies RLS reposent sur `private.current_org_id()` et `private.current_app_role()`
   (SECURITY DEFINER). Nommée `current_app_role` et non `current_role` : `CURRENT_ROLE` est un mot
   réservé SQL qui renverrait le rôle Postgres de connexion, pas le rôle métier.
 - Le schéma `payload` est créé vide et fermé à l'API Data ; la RLS de ses tables est activée au point 4.
+
+## Payload CMS
+
+- Back-office : `/admin`. API REST : `/api/*`. GraphQL : `/api/graphql`.
+- Config : `src/payload.config.ts`. Collections : `src/payload/collections/`.
+- Collections : Pages, Articles, Zones SEO, Médias, Utilisateurs.
+- Tables dans le schéma `payload`, jamais dans `public`.
+- Le premier utilisateur du back-office se crée à la première visite de `/admin`.
+- **Envoi de fichiers non branché** : le stockage Supabase (S3) reste à configurer,
+  sinon les envois de médias échoueront en production (système de fichiers en lecture seule
+  sur Vercel). Voir le résumé du point 4.
+- La CLI Payload ne fonctionne pas dans cet environnement (bug `tsx`/`undici`) :
+  `importMap` vide et schéma régénéré par le script dédié.
