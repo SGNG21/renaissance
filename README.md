@@ -6,6 +6,17 @@ Site, SEO local, blog et préinscription de Renaissance (POLIVIA). Référence :
 - **Déploiement** : GitHub → Vercel uniquement. Jamais de déploiement local.
 - **Secrets** : jamais côté client. Voir `.env.example`. Seule exception validée : `NEXT_PUBLIC_TURNSTILE_SITE_KEY` (clé publique).
 
+## Pages (point 5)
+
+Routes du site dans `src/app/(site)/` : `/`, `/formations`, `/programme`, `/immersion`,
+`/public-vise`, `/informations-pratiques`, `/preinscription`, `/mentions-legales`,
+`/confidentialite`. Le back-office Payload vit dans `src/app/(payload)/`, chaque groupe
+ayant son propre layout racine (une seule balise `<html>` par page).
+
+Les contenus que le client doit fournir (tarifs, dates, lieux, programme, financements)
+sont signalés par le composant `ACompleter`, volontairement visible : **aucune donnée
+n'est inventée**.
+
 ## Organisation du code
 
 - `src/ui/` — composants **génériques** (Button, Eyebrow, ArrowLink, SectionTitle, Field), pilotés par les tokens du thème, sans contenu propre à Renaissance. Destinés à être factorisés à part.

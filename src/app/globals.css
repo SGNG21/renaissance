@@ -47,3 +47,21 @@
     width: calc(100% - 40px);
   }
 }
+
+/*
+ * Apparition au défilement (composant Reveal).
+ * Uniquement si l'utilisateur n'a pas demandé à réduire les animations.
+ */
+@media (prefers-reduced-motion: no-preference) {
+  [data-reveal] {
+    opacity: 0;
+    transform: translateY(24px);
+    transition:
+      opacity 0.8s,
+      transform 0.8s;
+  }
+  [data-reveal][data-visible] {
+    opacity: 1;
+    transform: none;
+  }
+}
