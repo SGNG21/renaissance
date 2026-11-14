@@ -16,6 +16,7 @@ it("génère le schéma Payload sur la base locale jetable", async () => {
   const { Pages } = await import("../../src/payload/collections/pages");
   const { Users } = await import("../../src/payload/collections/users");
   const { ZonesSeo } = await import("../../src/payload/collections/zones-seo");
+  const { storagePlugins } = await import("../../src/payload/storage");
 
   const config = await buildConfig({
     admin: { user: Users.slug },
@@ -27,6 +28,7 @@ it("génère le schéma Payload sur la base locale jetable", async () => {
       schemaName: "payload",
       push: true,
     }),
+    plugins: storagePlugins(),
     typescript: { outputFile: "/dev/null" },
   });
 

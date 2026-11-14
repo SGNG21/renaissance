@@ -1,8 +1,10 @@
 import type { CollectionConfig } from "payload";
 
 /**
- * Médias. Le stockage Supabase (S3) n'est pas encore branché : les envois de
- * fichiers échoueront en production tant que l'adaptateur n'est pas configuré.
+ * Médias, stockés sur Supabase Storage via l'adaptateur S3 (voir ../storage.ts).
+ * Le bucket est public en lecture : les fichiers sont servis directement par
+ * Supabase. Sans les variables S3, Payload retombe sur le disque local
+ * (utilisable en développement, inopérant sur Vercel).
  */
 export const Medias: CollectionConfig = {
   slug: "medias",

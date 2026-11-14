@@ -27,6 +27,10 @@ Site, SEO local, blog et préinscription de Renaissance (POLIVIA). Référence :
   - `20261114001305_payload_schema` — 16 tables Payload dans le schéma `payload`, RLS activée,
     aucune policy, aucun privilège `anon`/`authenticated`. Régénération :
     `scripts/payload-schema/README.md`.
+  - `20261114002200_payload_medias_objectkey` — colonne `_objectkey` ajoutée par
+    l'adaptateur de stockage S3.
+- Les advisors remontent 16 notices **INFO** `rls_enabled_no_policy` sur le schéma `payload` :
+  comportement voulu par le cahier (RLS sans policy), pas une anomalie.
 - Client serveur : `src/lib/supabase/server.ts` (`server-only`, clé `service_role`, jamais côté navigateur).
 - Le formulaire public écrit dans `leads` uniquement via une route serveur.
 - Les policies RLS reposent sur `private.current_org_id()` et `private.current_app_role()`
@@ -41,8 +45,9 @@ Site, SEO local, blog et préinscription de Renaissance (POLIVIA). Référence :
 - Collections : Pages, Articles, Zones SEO, Médias, Utilisateurs.
 - Tables dans le schéma `payload`, jamais dans `public`.
 - Le premier utilisateur du back-office se crée à la première visite de `/admin`.
-- **Envoi de fichiers non branché** : le stockage Supabase (S3) reste à configurer,
-  sinon les envois de médias échoueront en production (système de fichiers en lecture seule
-  sur Vercel). Voir le résumé du point 4.
+- Médias stockés sur **Supabase Storage** (API S3), bucket public en lecture :
+  les fichiers sont servis par Supabase, pas par une fonction Vercel. Clés S3
+  côté serveur uniquement (`S3_*`, aucun `NEXT_PUBLIC_`). Sans ces variables,
+  Payload retombe sur le disque local (développement seulement).
 - La CLI Payload ne fonctionne pas dans cet environnement (bug `tsx`/`undici`) :
   `importMap` vide et schéma régénéré par le script dédié.

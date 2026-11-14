@@ -11,6 +11,7 @@ import { Medias } from "./payload/collections/medias";
 import { Pages } from "./payload/collections/pages";
 import { Users } from "./payload/collections/users";
 import { ZonesSeo } from "./payload/collections/zones-seo";
+import { storagePlugins } from "./payload/storage";
 
 const dirname = path.dirname(fileURLToPath(import.meta.url));
 
@@ -34,6 +35,7 @@ export default buildConfig({
     push: false,
     migrationDir: path.resolve(dirname, "payload/migrations"),
   }),
+  plugins: storagePlugins(),
   typescript: {
     outputFile: path.resolve(dirname, "payload/payload-types.ts"),
   },
