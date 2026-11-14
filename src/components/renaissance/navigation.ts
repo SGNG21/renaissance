@@ -7,10 +7,14 @@ export const mainNav = [
   { label: "Infos pratiques", href: "/informations-pratiques" },
 ] as const;
 
+/** Le journal n'est pas dans la barre principale : il vit dans le pied de page. */
+export const BLOG = { label: "Le journal", href: "/blog" } as const;
+
 export const footerNav = {
   explorer: mainNav,
   accompagner: [
     { label: "Préinscription", href: "/preinscription" },
+    { label: "Le journal", href: "/blog" },
     { label: "Mentions légales", href: "/mentions-legales" },
     { label: "Confidentialité", href: "/confidentialite" },
   ],

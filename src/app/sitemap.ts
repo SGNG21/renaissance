@@ -1,5 +1,5 @@
 import type { MetadataRoute } from "next";
-import { getZonesSeo } from "@/lib/payload";
+import { getArticles, getZonesSeo } from "@/lib/payload";
 import { getSiteUrl, isIndexable } from "@/lib/site";
 
 const PAGES = [
@@ -10,6 +10,7 @@ const PAGES = [
   { chemin: "/public-vise", priorite: 0.7 },
   { chemin: "/informations-pratiques", priorite: 0.8 },
   { chemin: "/preinscription", priorite: 0.9 },
+  { chemin: "/blog", priorite: 0.6 },
   { chemin: "/mentions-legales", priorite: 0.2 },
   { chemin: "/confidentialite", priorite: 0.2 },
 ];
@@ -20,6 +21,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
 
   const base = getSiteUrl();
   const zones = await getZonesSeo();
+  const articles = await getArticles();
 
   return [
     ...PAGES.map((p) => ({
@@ -33,6 +35,12 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       lastModified: new Date(),
       changeFrequency: "monthly" as const,
       priority: 0.8,
+    })),
+    ...articles.map((a) => ({
+      url: `${base}/blog/${a.slug}`,
+      lastModified: new Date(a.datePublication),
+      changeFrequency: "yearly" as const,
+      priority: 0.5,
     })),
   ];
 }
