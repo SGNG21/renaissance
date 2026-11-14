@@ -91,28 +91,39 @@ Aucune valeur n'a été inventée.
 
 ## 10. Deux décisions à prendre
 
-**Contraste de la charte.** Lighthouse relève 5 combinaisons sous le seuil WCAG AA,
-toutes issues de la maquette validée :
+**Contraste** — *traité le 14/11.* Les 5 teintes sous le seuil WCAG AA ont été
+assombries, teinte et saturation conservées. L'accessibilité passe de 95 à **100** et
+l'audit de contraste est au vert.
 
-| Texte | Fond | Ratio | Minimum requis |
+| Rôle | Avant | Après | Ratio avant → après |
 |---|---|---|---|
-| `#bba27c` (gold) | `#eae9e1` | 2.01 | 4.5 |
-| `#7d8279` | `#edeae1` | 3.26 | 4.5 |
-| `#758078` | `#eae9e1` | 3.37 | 4.5 |
-| `#8c7960` | `#faf8f1` | 3.93 | 4.5 |
-| `#6d766d` | `#faf8f1` | 4.42 | 4.5 |
+| Doré **texte** (eyebrows, libellés) | `#bba27c` | `#7d6541` | 2.01 → 4.53 |
+| Libellé de zone | `#8c7960` | `#776651` | 3.44 → 4.53 |
+| Mention du bandeau | `#7d8279` | `#666a63` | 3.23 → 4.53 |
+| Note des territoires | `#758078` | `#626b65` | 3.37 → 4.52 |
+| Accroche de territoire | `#6d766d` | `#636b63` | 3.86 → 4.52 |
 
-Je **n'ai rien changé** : ce sont les tokens que tu as validés. L'accessibilité reste à
-95-96, donc au-dessus de l'objectif. Mais pour un organisme de formation, un contraste
-insuffisant sur les éyebrows et mentions peut poser un vrai problème d'usage, voire de
-conformité. Je peux assombrir ces teintes de quelques points sans toucher à l'identité :
-dis-moi si tu veux que je le fasse.
+Le **doré décoratif reste inchangé** (`--color-gold` : filets, bordures, contour de
+focus) ainsi que les grands textes dorés, qui passent déjà le seuil applicable aux
+grandes tailles. Un token distinct `--color-gold-text` a été créé pour ne pas mélanger
+les deux usages.
 
-**Premier article de blog.** Les pages `/blog` et `/blog/[slug]` sont construites et
-branchées sur la collection Articles : catégories, image de couverture, brouillons,
-données structurées, canonique et entrée au sitemap. Tant qu'aucun article n'est publié,
-`/blog` affiche un encadré « à compléter ».
+**Premier article de blog** — *brouillon livré le 14/11.*
+`docs/blog/brouillon-accueillant-familial-yonne.md` — « Devenir accueillant familial
+dans l'Yonne : métier, formation, démarches », 1 234 mots, 9 sections.
 
-Il reste à écrire **le premier article (1 000 à 1 500 mots)**. Je ne l'ai pas rédigé :
-publié sous la signature de Renaissance, il engage l'organisme sur le fond et demande
-un sujet et une validation éditoriale. Donne-moi le sujet et je le propose en brouillon.
+Il est **volontairement non publié** et contient **6 encadrés `[À VALIDER]`** : aucun
+montant, aucune durée, aucun nombre et aucune certification n'a été inventé.
+
+Trois points demandent une vérification avant publication :
+
+1. Le cadre de l'agrément est **départemental** dans sa mise en œuvre : chaque élément
+   doit être confirmé auprès du Conseil départemental de l'Yonne.
+2. La composition de la rémunération et les montants : encadrés et révisés, donc jamais
+   publiés sans vérification.
+3. **Le point le plus sensible** : l'articulation entre la formation obligatoire
+   organisée par le département et le parcours Renaissance. Une ambiguïté ici pourrait
+   faire croire à un candidat que notre formation le dispense d'une démarche officielle.
+
+Une fois relu et complété, l'article se saisit dans `/admin` → Articles (il peut rester
+en brouillon tant qu'il n'est pas validé).

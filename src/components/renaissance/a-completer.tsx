@@ -21,7 +21,7 @@ export function ACompleter({
       className={cn("border border-dashed border-gold bg-ivory p-6 md:p-8", className)}
       aria-label={titre}
     >
-      <p className="mb-3 text-[10px] font-bold uppercase tracking-[0.2em] text-[#8c7960]">
+      <p className="mb-3 text-[10px] font-bold uppercase tracking-[0.2em] text-[#776651]">
         {titre}
       </p>
       <div className="text-[13px] leading-[1.9] text-sage">{children}</div>

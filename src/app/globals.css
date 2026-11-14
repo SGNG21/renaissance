@@ -10,6 +10,14 @@
   --color-forest: #253e32;
   --color-forest-hover: #435e4d;
   --color-gold: #bba27c;
+  /*
+   * Doré pour le TEXTE uniquement (eyebrows, libellés).
+   * #bba27c tombe à 2,01 de contraste sur les fonds clairs, loin du seuil WCAG
+   * AA de 4,5. Cette variante assombrie conserve teinte et saturation et
+   * atteint 4,53. Le doré décoratif (filets, bordures, focus) reste inchangé :
+   * il ne porte aucun texte.
+   */
+  --color-gold-text: #7d6541;
   --color-gold-light: #cbb89b;
   --color-ivory: #f5f2ea;
   --color-paper: #fbf9f4;

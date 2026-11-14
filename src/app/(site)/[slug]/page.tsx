@@ -151,7 +151,7 @@ export default async function ZoneSeoPage({ params }: { params: Promise<{ slug: 
               href={`/${PREFIXE}${z.slug}`}
               className="flex min-h-[150px] flex-col justify-between bg-ivory p-[27px] transition-[background,transform] duration-300 hover:-translate-y-[3px] hover:bg-[#dfdbce] md:px-[42px] md:py-9"
             >
-              <span className="text-[10px] uppercase tracking-[0.2em] text-[#8c7960]">
+              <span className="text-[10px] uppercase tracking-[0.2em] text-[#776651]">
                 {z.nom}
               </span>
               <strong className="font-serif text-[clamp(24px,2.5vw,34px)] font-normal leading-[1.12] text-forest">

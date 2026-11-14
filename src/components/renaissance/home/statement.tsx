@@ -6,7 +6,7 @@ export function Statement() {
         <span className="font-serif text-[24px]">
           Faire de votre sensibilité une véritable force professionnelle.
         </span>
-        <div className="mt-[17px] text-[10px] uppercase tracking-[0.16em] text-[#7d8279] md:mt-0">
+        <div className="mt-[17px] text-[10px] uppercase tracking-[0.16em] text-[#666a63] md:mt-0">
           Accompagnement · Formation · Transmission
         </div>
       </div>

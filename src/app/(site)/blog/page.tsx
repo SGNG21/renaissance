@@ -60,7 +60,7 @@ export default async function BlogPage() {
                     ) : null}
                   </div>
                   <div className="pt-[27px]">
-                    <span className="text-[10px] uppercase tracking-[0.18em] text-gold">
+                    <span className="text-[10px] uppercase tracking-[0.18em] text-gold-text">
                       {CATEGORIES_ARTICLE[article.categorie] ?? article.categorie}
                     </span>
                     <h2 className="mb-[10px] mt-3 font-serif text-[28px] font-normal leading-[1.15]">

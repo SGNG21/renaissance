@@ -29,13 +29,13 @@ export function Territoires() {
               href={`/formation-${z.slug}`}
               className="flex min-h-[195px] flex-col justify-between bg-[#faf8f1] p-[27px] transition-[background,transform] duration-300 hover:-translate-y-[3px] hover:bg-[#dfdbce] md:min-h-[230px] md:px-[42px] md:py-9"
             >
-              <span className="text-[10px] uppercase tracking-[0.2em] text-[#8c7960]">
+              <span className="text-[10px] uppercase tracking-[0.2em] text-[#776651]">
                 {z.num} — {z.label}
               </span>
               <strong className="font-serif text-[length:clamp(28px,3vw,46px)] font-normal leading-[1.12] text-forest">
                 {z.titre}
               </strong>
-              <small className="text-[12px] text-[#6d766d]">
+              <small className="text-[12px] text-[#636b63]">
                 {z.accroche}
                 <b className="float-right text-[24px] font-normal" aria-hidden>
                   ↗
@@ -45,7 +45,7 @@ export function Territoires() {
           ))}
         </div>
 
-        <p className="mt-6 text-[11px] text-[#758078]">
+        <p className="mt-6 text-[11px] text-[#626b65]">
           Les lieux, modalités et dates des prochaines sessions sont communiqués lors de la prise
           de contact. Aucune implantation locale supplémentaire n&apos;est présumée.
         </p>
