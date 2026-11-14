@@ -15,7 +15,8 @@ pour la suite du développement, mais **tout doit être fait avant la mise en li
 - [ ] Importer `docs/n8n/workflow-preinscription.json`.
 - [ ] Définir les variables côté n8n (détail dans `docs/n8n/README.md`) :
       `RENAISSANCE_WEBHOOK_SECRET`, `BREVO_API_KEY`, `BREVO_TEMPLATE_CONFIRMATION`,
-      `BREVO_TEMPLATE_NOTIFICATION`, `BREVO_LIST_ID`, `RENAISSANCE_NOTIFICATION_EMAIL`.
+      `BREVO_TEMPLATE_NOTIFICATION`, `RENAISSANCE_NOTIFICATION_EMAIL`.
+      `BREVO_LIST_ID` est **facultatif** : à laisser vide tant qu'aucune liste n'existe.
 - [ ] Activer le workflow et copier l'URL de production du webhook.
 
 ## 3. Brevo
@@ -23,7 +24,9 @@ pour la suite du développement, mais **tout doit être fait avant la mise en li
 - [ ] Créer les 2 modèles transactionnels depuis `docs/brevo/` :
       `confirmation-prospect.html` et `notification-renaissance.html`.
 - [ ] Noter leurs identifiants et les reporter dans n8n.
-- [ ] Créer la liste des préinscrits, noter son identifiant.
+- [ ] *(Facultatif, plus tard)* Créer la liste des préinscrits et renseigner
+      `BREVO_LIST_ID` côté n8n. **Sans cette variable, le workflow fonctionne** :
+      les deux e-mails partent, seule l'inscription à la liste est sautée.
 - [ ] Valider l'expéditeur (SPF / DKIM sur le domaine), sinon les e-mails partent en spam.
 
 ## 4. Cloudflare Turnstile

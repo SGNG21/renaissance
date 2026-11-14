@@ -2,6 +2,9 @@
 
 Chaîne : site → route serveur `/api/preinscription` → Supabase (`leads`) → **n8n** → Brevo.
 
+Trois actions dans n8n : e-mail de confirmation au prospect, notification à Renaissance,
+et — **seulement si une liste est configurée** — ajout du contact à cette liste.
+
 Le lead est enregistré en base **avant** l'appel à n8n. Si n8n est indisponible, le
 visiteur voit quand même sa confirmation et la demande n'est pas perdue : l'échec est
 tracé dans la table `events` (`n8n.failed`) et peut être rejoué.
@@ -21,8 +24,23 @@ tracé dans la table `events` (`n8n.failed`) et peut être rejoué.
 | `BREVO_API_KEY` | Clé API Brevo (v3). Reste sur le VPS, jamais dans le site. |
 | `BREVO_TEMPLATE_CONFIRMATION` | Identifiant du modèle « confirmation au prospect ». |
 | `BREVO_TEMPLATE_NOTIFICATION` | Identifiant du modèle « notification à Renaissance ». |
-| `BREVO_LIST_ID` | Identifiant de la liste Brevo des préinscrits. |
+| `BREVO_LIST_ID` | **Facultatif.** Identifiant de la liste Brevo des préinscrits. Si la variable est absente ou vide, l'ajout du contact est sauté. |
 | `RENAISSANCE_NOTIFICATION_EMAIL` | Adresse qui reçoit les notifications. |
+
+## Ajout à une liste Brevo : facultatif
+
+Le nœud « Liste Brevo configurée ? » teste `BREVO_LIST_ID`.
+
+- **Variable absente ou vide** : l'ajout du contact est sauté, le workflow répond 200.
+  Les deux e-mails transactionnels (confirmation au prospect, notification à Renaissance)
+  partent normalement.
+- **Variable renseignée** : le contact est créé ou mis à jour dans la liste.
+
+Aucune erreur n'est levée dans le premier cas : c'est une étape optionnelle, pas une panne.
+Dans tous les cas, le lead est déjà enregistré dans Supabase avant l'appel à n8n.
+
+Pour brancher la liste plus tard : créer la liste dans Brevo, ajouter `BREVO_LIST_ID`
+côté n8n, et relancer le workflow. Aucun redéploiement du site n'est nécessaire.
 
 ## Sécurité
 
