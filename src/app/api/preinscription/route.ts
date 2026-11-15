@@ -1,6 +1,6 @@
 import { NextResponse } from "next/server";
 import { FORMATIONS, VERSION_CONSENTEMENT, schemaPreinscription } from "@/lib/leads/schema";
-import { envoyerVersN8n } from "@/lib/leads/n8n";
+import { ajouterContact, envoyerConfirmation, envoyerNotification } from "@/lib/leads/brevo";
 import { verifierTurnstile } from "@/lib/leads/turnstile";
 import { getSupabaseAdmin } from "@/lib/supabase/server";
 
@@ -9,6 +9,10 @@ import { getSupabaseAdmin } from "@/lib/supabase/server";
  *
  * Seul chemin d'écriture dans `leads` : le navigateur n'accède jamais à
  * Supabase. La clé service_role est lue ici, côté serveur uniquement.
+ *
+ * Ordre volontaire : Supabase d'abord, Brevo ensuite. La base est la source de
+ * vérité ; les e-mails sont un confort. Une panne Brevo ne perd donc jamais une
+ * demande et ne change rien à ce que voit le visiteur.
  */
 export async function POST(request: Request) {
   let brut: unknown;
@@ -109,30 +113,50 @@ export async function POST(request: Request) {
     FORMATIONS.find((f) => f.valeur === donnees.formationVisee)?.libelle ??
     donnees.formationVisee;
 
-  // Le lead est enregistré : la suite ne doit plus faire échouer la réponse.
-  const transmission = await envoyerVersN8n({
-    leadId: lead.id,
-    prenom: donnees.prenom,
-    nom: donnees.nom,
-    email: donnees.email,
-    telephone: donnees.telephone || undefined,
-    formationVisee: donnees.formationVisee,
-    formationLibelle: libelle,
-    zone: donnees.zone || undefined,
-    disponibilites: donnees.disponibilites || undefined,
-    message: donnees.message || undefined,
-    source: donnees.source || undefined,
-    utm: donnees.utm,
-    creeLe: maintenant,
-  });
+  // Le lead est enregistré : à partir d'ici, plus rien ne doit faire échouer la
+  // réponse au visiteur. Les trois appels Brevo sont lancés en parallèle et
+  // leurs résultats sont tracés dans `events` pour pouvoir être rejoués.
+  const [confirmation, notification, contact] = await Promise.all([
+    envoyerConfirmation(donnees, libelle),
+    envoyerNotification(donnees, libelle, lead.id),
+    ajouterContact(donnees, libelle),
+  ]);
 
-  await journaliser(
-    supabase,
-    organisation.id,
-    lead.id,
-    transmission.transmis ? "n8n.sent" : "n8n.failed",
-    { raison: transmission.raison ?? null },
-  );
+  await Promise.all([
+    journaliser(
+      supabase,
+      organisation.id,
+      lead.id,
+      confirmation.ok ? "brevo.confirmation.sent" : "brevo.confirmation.failed",
+      { raison: confirmation.raison ?? null },
+    ),
+    journaliser(
+      supabase,
+      organisation.id,
+      lead.id,
+      notification.ok ? "brevo.notification.sent" : "brevo.notification.failed",
+      { raison: notification.raison ?? null },
+    ),
+    journaliser(
+      supabase,
+      organisation.id,
+      lead.id,
+      contact.saute
+        ? "brevo.contact.skipped"
+        : contact.ok
+          ? "brevo.contact.added"
+          : "brevo.contact.failed",
+      { raison: contact.raison ?? null },
+    ),
+  ]);
+
+  if (!confirmation.ok || !notification.ok) {
+    console.error(
+      `[preinscription] Lead ${lead.id} enregistré, envoi Brevo incomplet ` +
+        `(confirmation : ${confirmation.raison ?? "ok"}, ` +
+        `notification : ${notification.raison ?? "ok"}).`,
+    );
+  }
 
   return NextResponse.json({ ok: true, leadId: lead.id }, { status: 201 });
 }

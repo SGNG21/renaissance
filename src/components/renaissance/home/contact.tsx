@@ -7,7 +7,7 @@ import Link from "next/link";
 /**
  * Section de bascule vers la préinscription.
  * Le formulaire lui-même vit sur /preinscription (cahier technique, section 4) :
- * il sera relié à la route serveur, à n8n et à Brevo au point 7.
+ * route serveur, enregistrement dans Supabase puis envois Brevo.
  */
 export function Contact() {
   return (

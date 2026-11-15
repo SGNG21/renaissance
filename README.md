@@ -2,7 +2,7 @@
 
 Site, SEO local, blog et préinscription de Renaissance (POLIVIA). Référence : cahier technique Étape 1.
 
-- **Stack** : Next.js (App Router), React, TypeScript, Tailwind CSS v4, shadcn/ui, Payload CMS, Supabase.
+- **Stack** : Next.js (App Router), React, TypeScript, Tailwind CSS v4, shadcn/ui, Payload CMS, Supabase, Brevo.
 - **Déploiement** : GitHub → Vercel uniquement. Jamais de déploiement local.
 - **Secrets** : jamais côté client. Voir `.env.example`. Seule exception validée : `NEXT_PUBLIC_TURNSTILE_SITE_KEY` (clé publique).
 
@@ -62,3 +62,19 @@ n'est inventée**.
   Payload retombe sur le disque local (développement seulement).
 - La CLI Payload ne fonctionne pas dans cet environnement (bug `tsx`/`undici`) :
   `importMap` vide et schéma régénéré par le script dédié.
+
+## Préinscription
+
+`/preinscription` → route serveur `/api/preinscription` → Supabase (`leads`) → Brevo.
+
+Les appels Brevo partent **directement de la route serveur** : l'étape 1 n'utilise
+aucune automatisation externe ni serveur tiers.
+
+Ordre volontaire : la base d'abord, les e-mails ensuite. Supabase est la source de
+vérité, les e-mails sont un confort. Une panne Brevo ne perd donc jamais une demande
+et ne change rien à ce que voit le visiteur ; chaque envoi est tracé dans `events`
+(`brevo.confirmation.*`, `brevo.notification.*`, `brevo.contact.*`) pour être rejoué.
+
+Trois actions : confirmation au prospect, notification à Renaissance, et — uniquement
+si `BREVO_LIST_ID` est défini — ajout du contact à une liste. Sans gabarit transactionnel
+configuré, un e-mail de repli est envoyé plutôt que rien.

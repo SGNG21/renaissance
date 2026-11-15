@@ -3,6 +3,23 @@
 Tout ce qui ne peut pas être fait depuis la session de code. Rien ici n'est bloquant
 pour la suite du développement, mais **tout doit être fait avant la mise en ligne**.
 
+## 0. Écart assumé par rapport au cahier technique
+
+Le cahier prévoit « n8n sur le VPS OVH » pour l'automatisation. **Il n'y a pas de VPS**,
+donc n8n ne tournera pas. Sur ta décision du 15/11, les envois Brevo partent désormais
+**directement de la route serveur Vercel**.
+
+Conséquences :
+
+- Une brique de moins à héberger, à sécuriser et à maintenir.
+- Plus de secret partagé ni de webhook exposé.
+- En contrepartie, pas d'interface de rejeu visuelle : les échecs se lisent dans la
+  table `events` de Supabase.
+
+`docs/cahier-technique-etape-1.md` et `docs/prompt-claude-code.md` sont **laissés
+intacts** : ce sont les documents de référence contractuels, ils gardent trace de ce qui
+était prévu. Cette note documente l'écart.
+
 ## 1. Vérifications en attente
 
 - [ ] **Téléverser une image de test** dans `/admin` → Médias, puis me le dire.
@@ -10,26 +27,23 @@ pour la suite du développement, mais **tout doit être fait avant la mise en li
       (et non une fonction Vercel), colonne `_objectkey` renseignée.
       C'est le seul maillon du stockage jamais testé de bout en bout.
 
-## 2. n8n (VPS OVH)
+## 2. Brevo — le seul service à configurer
 
-- [ ] Importer `docs/n8n/workflow-preinscription.json`.
-- [ ] Définir les variables côté n8n (détail dans `docs/n8n/README.md`) :
-      `RENAISSANCE_WEBHOOK_SECRET`, `BREVO_API_KEY`, `BREVO_TEMPLATE_CONFIRMATION`,
-      `BREVO_TEMPLATE_NOTIFICATION`, `RENAISSANCE_NOTIFICATION_EMAIL`.
-      `BREVO_LIST_ID` est **facultatif** : à laisser vide tant qu'aucune liste n'existe.
-- [ ] Activer le workflow et copier l'URL de production du webhook.
+Pas de n8n, pas de VPS : la route serveur sur Vercel appelle Brevo directement.
 
-## 3. Brevo
-
-- [ ] Créer les 2 modèles transactionnels depuis `docs/brevo/` :
-      `confirmation-prospect.html` et `notification-renaissance.html`.
-- [ ] Noter leurs identifiants et les reporter dans n8n.
+- [ ] Récupérer la **clé API v3** (Brevo → SMTP & API → Clés API).
+- [ ] **Vérifier un expéditeur** (SPF / DKIM sur le domaine), sinon les e-mails
+      partent en spam. C'est le point le plus souvent oublié.
+- [ ] Créer les 2 modèles transactionnels à partir de `docs/brevo/` :
+      `confirmation-prospect.html` et `notification-renaissance.html`, puis noter
+      leurs identifiants.
 - [ ] *(Facultatif, plus tard)* Créer la liste des préinscrits et renseigner
-      `BREVO_LIST_ID` côté n8n. **Sans cette variable, le workflow fonctionne** :
-      les deux e-mails partent, seule l'inscription à la liste est sautée.
-- [ ] Valider l'expéditeur (SPF / DKIM sur le domaine), sinon les e-mails partent en spam.
+      `BREVO_LIST_ID`. Sans cette variable, l'ajout est **sauté sans erreur** ;
+      les deux e-mails partent quand même.
 
-## 4. Cloudflare Turnstile
+Détail complet dans `docs/brevo/README.md`.
+
+## 3. Cloudflare Turnstile
 
 - [ ] Créer un widget pour le domaine.
 - [ ] Reporter la clé **secrète** dans `TURNSTILE_SECRET_KEY` (Vercel, Sensitive).
@@ -38,12 +52,16 @@ pour la suite du développement, mais **tout doit être fait avant la mise en li
 Sans ces clés, le formulaire fonctionne mais n'est protégé que par le champ piège :
 l'absence de clé est journalisée à chaque envoi.
 
-## 5. Variables Vercel à ajouter
+## 4. Variables Vercel à ajouter
 
 | Variable | Valeur | Portée |
 |---|---|---|
-| `N8N_WEBHOOK_URL` | URL de production du webhook n8n | Prod + Preview |
-| `N8N_WEBHOOK_SECRET` | même valeur que `RENAISSANCE_WEBHOOK_SECRET` | Prod + Preview, **Sensitive** |
+| `BREVO_API_KEY` | clé API Brevo v3 | Prod + Preview, **Sensitive** |
+| `BREVO_SENDER` | expéditeur vérifié, ex. `Renaissance <contact@…>` | Prod + Preview |
+| `NOTIFICATION_EMAIL` | adresse qui reçoit les préinscriptions | Prod + Preview |
+| `BREVO_TEMPLATE_CONFIRMATION` | identifiant du modèle *(facultatif)* | Prod + Preview |
+| `BREVO_TEMPLATE_NOTIFICATION` | identifiant du modèle *(facultatif)* | Prod + Preview |
+| `BREVO_LIST_ID` | identifiant de liste *(facultatif)* | Prod + Preview |
 | `TURNSTILE_SECRET_KEY` | clé secrète Turnstile | Prod + Preview, **Sensitive** |
 | `NEXT_PUBLIC_TURNSTILE_SITE_KEY` | clé publique Turnstile | Prod + Preview |
 | `SITE_URL` | *(optionnel)* seulement pour une recette sur un autre domaine | — |
@@ -55,18 +73,18 @@ domaine en recette.
 Rappel : une variable ajoutée ne prend effet qu'au **build suivant**. Un redéploiement
 est nécessaire après chaque modification.
 
-## 6. Réglages Vercel
+## 5. Réglages Vercel
 
 - [ ] Vérifier Framework = **Next.js** et Production Branch = **main**
       (je n'ai pas les droits : mes appels sont refusés en 403).
 - [ ] Transférer le projet au compte du client avant le lancement (art. 4.1).
 
-## 7. Domaine
+## 6. Domaine
 
 - [ ] Rattacher **renaissance-formation.fr** au projet Vercel et configurer le DNS.
       Action non réversible sans coupure : **je ne la fais pas sans ton feu vert**.
 
-## 8. Le jour de la mise en ligne
+## 7. Le jour de la mise en ligne
 
 - [ ] Ajouter `SITE_INDEXABLE=true` dans Vercel (Production uniquement), puis redéployer.
       Tant que cette variable est absente, `robots.txt` interdit tout, les pages portent
@@ -74,7 +92,7 @@ est nécessaire après chaque modification.
       par accident.
 - [ ] Fusionner la branche de travail vers `main` — **j'attends ton feu vert**.
 
-## 9. Contenus à fournir
+## 8. Contenus à fournir
 
 Ils apparaissent sur le site dans des encadrés « à compléter », volontairement visibles.
 Aucune valeur n'a été inventée.
@@ -92,7 +110,7 @@ Aucune valeur n'a été inventée.
       dans les mentions légales.
 - [ ] Trancher le label du logo (« LA MAISON DES VOCATIONS » est provisoire).
 
-## 10. Deux décisions à prendre
+## 9. Deux décisions à prendre
 
 **Contraste** — *traité le 14/11.* Les 5 teintes sous le seuil WCAG AA ont été
 assombries, teinte et saturation conservées. L'accessibilité passe de 95 à **100** et

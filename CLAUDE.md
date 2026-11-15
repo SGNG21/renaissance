@@ -24,7 +24,7 @@ Plateforme de l'organisme de formation **Renaissance** (métiers de l'accompagne
 - Le dépôt ne porte que le spécifique Renaissance. Extraction en package partagé plus tard (au 2e organisme), pas maintenant.
 
 ## Stack
-Next.js (App Router) + React + TypeScript strict · Tailwind v4 + shadcn (écrit à la main si la CLI est bloquée par le proxy) · Payload CMS (schéma `payload` isolé dans Supabase, RLS activée, aucune policy) · Supabase (PostgreSQL, Auth, Storage, RLS) · n8n sur VPS OVH · Brevo · Vitest + Playwright. Node 22. Gestionnaire : pnpm.
+Next.js (App Router) + React + TypeScript strict · Tailwind v4 + shadcn (écrit à la main si la CLI est bloquée par le proxy) · Payload CMS (schéma `payload` isolé dans Supabase, RLS activée, aucune policy) · Supabase (PostgreSQL, Auth, Storage, RLS) · Brevo (appelé directement depuis la route serveur, pas de n8n ni de VPS en étape 1) · Vitest + Playwright. Node 22. Gestionnaire : pnpm.
 
 ## Qualité avant chaque push
 `lint`, `typecheck`, tests unitaires et `next build` doivent passer. Lighthouse > 90 visé. `robots: noindex` tant que le site n'est pas lancé (retiré au point 8). Tests Playwright du parcours de préinscription écrits avant la recette.
