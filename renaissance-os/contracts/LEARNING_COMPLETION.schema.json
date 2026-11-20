@@ -1,0 +1,54 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://renaissance.local/contracts/LEARNING_COMPLETION.schema.json",
+  "title": "LEARNING_COMPLETION",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "id": {
+      "type": "string",
+      "format": "uuid"
+    },
+    "learner_id": {
+      "type": "string",
+      "format": "uuid"
+    },
+    "course_id": {
+      "type": "string",
+      "format": "uuid"
+    },
+    "session_id": {
+      "type": "string",
+      "format": "uuid"
+    },
+    "completed_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "assessment_evidence_ref": {
+      "type": "string",
+      "minLength": 1
+    },
+    "certificate_status": {
+      "enum": [
+        "not_eligible",
+        "pending",
+        "issued",
+        "revoked"
+      ]
+    },
+    "is_demo": {
+      "type": "boolean"
+    }
+  },
+  "required": [
+    "id",
+    "learner_id",
+    "course_id",
+    "session_id",
+    "completed_at",
+    "assessment_evidence_ref",
+    "certificate_status",
+    "is_demo"
+  ]
+}

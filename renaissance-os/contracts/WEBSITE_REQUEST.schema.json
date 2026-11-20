@@ -1,0 +1,58 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://renaissance.local/contracts/WEBSITE_REQUEST.schema.json",
+  "title": "WEBSITE_REQUEST",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "id": {
+      "type": "string",
+      "format": "uuid"
+    },
+    "requester_id": {
+      "type": "string",
+      "format": "uuid"
+    },
+    "support_case_id": {
+      "type": "string",
+      "format": "uuid"
+    },
+    "status": {
+      "enum": [
+        "new",
+        "qualified",
+        "consent_pending",
+        "ready_for_transfer",
+        "transferred",
+        "acknowledged",
+        "closed"
+      ]
+    },
+    "request_summary": {
+      "type": "string",
+      "minLength": 1
+    },
+    "transfer_consent": {
+      "type": "boolean"
+    },
+    "polivia_external_ref": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "updated_at": {
+      "type": "string",
+      "format": "date-time"
+    }
+  },
+  "required": [
+    "id",
+    "requester_id",
+    "support_case_id",
+    "status",
+    "request_summary",
+    "transfer_consent",
+    "updated_at"
+  ]
+}

@@ -1,0 +1,17 @@
+flowchart TD
+  Public[Site public Renaissance] --> Gateway[Gateway applicative + RBAC]
+  Campus[Campus apprenant / formateur] --> Gateway
+  Directory[Annuaire national public] --> Gateway
+  Community[Communauté] --> Gateway
+  Cockpit[Président et administration] --> Gateway
+  Gateway --> Domain[(Domaine Renaissance: inscriptions, sessions, annuaire)]
+  Gateway --> CRM[Frappe CRM — à raccorder]
+  Gateway --> ERP[ERPNext — à raccorder]
+  Gateway --> LMS[LMS candidat Frappe Learning]
+  Gateway --> Forum[Forum candidat Discourse]
+  Domain --> Outbox[(Outbox / audit)]
+  Outbox --> N8N[n8n — à vérifier]
+  Gateway --> Support[Support Renaissance]
+  Support --> Consent{Accord de transmission}
+  Consent -->|oui| POLIVIA[POLIVIA — intégration séparée]
+  Consent -->|non| End[Conserver chez Renaissance]

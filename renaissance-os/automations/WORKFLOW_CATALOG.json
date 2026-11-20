@@ -1,0 +1,308 @@
+[
+  {
+    "id": "wf01",
+    "name": "Lead / renseignement",
+    "trigger": "lead.created",
+    "expected_action": "CRM contact upsert et réponse transactionnelle",
+    "audience": "prospect",
+    "status": "SPEC_ONLY",
+    "required_controls": [
+      "authorization",
+      "idempotence",
+      "bounded_retry",
+      "audit_log",
+      "error_alert",
+      "environment_separation",
+      "consent_when_applicable"
+    ]
+  },
+  {
+    "id": "wf02",
+    "name": "Candidature soumise",
+    "trigger": "candidate.submitted",
+    "expected_action": "Accusé et tâche de vérification",
+    "audience": "candidate",
+    "status": "SPEC_ONLY",
+    "required_controls": [
+      "authorization",
+      "idempotence",
+      "bounded_retry",
+      "audit_log",
+      "error_alert",
+      "environment_separation",
+      "consent_when_applicable"
+    ]
+  },
+  {
+    "id": "wf03",
+    "name": "Dossier incomplet",
+    "trigger": "application.needs_info",
+    "expected_action": "Relance plafonnée selon statut",
+    "audience": "candidate",
+    "status": "SPEC_ONLY",
+    "required_controls": [
+      "authorization",
+      "idempotence",
+      "bounded_retry",
+      "audit_log",
+      "error_alert",
+      "environment_separation",
+      "consent_when_applicable"
+    ]
+  },
+  {
+    "id": "wf04",
+    "name": "Décision candidature",
+    "trigger": "application.reviewed",
+    "expected_action": "Notification acceptation/refus sans données intimes",
+    "audience": "candidate",
+    "status": "SPEC_ONLY",
+    "required_controls": [
+      "authorization",
+      "idempotence",
+      "bounded_retry",
+      "audit_log",
+      "error_alert",
+      "environment_separation",
+      "consent_when_applicable"
+    ]
+  },
+  {
+    "id": "wf05",
+    "name": "Réservation session",
+    "trigger": "enrollment.confirmed",
+    "expected_action": "Confirmation et calendrier",
+    "audience": "learner",
+    "status": "SPEC_ONLY",
+    "required_controls": [
+      "authorization",
+      "idempotence",
+      "bounded_retry",
+      "audit_log",
+      "error_alert",
+      "environment_separation",
+      "consent_when_applicable"
+    ]
+  },
+  {
+    "id": "wf06",
+    "name": "Rappel de session",
+    "trigger": "session.reminder.due",
+    "expected_action": "Rappel conditionnel et opt-out approprié",
+    "audience": "learner",
+    "status": "SPEC_ONLY",
+    "required_controls": [
+      "authorization",
+      "idempotence",
+      "bounded_retry",
+      "audit_log",
+      "error_alert",
+      "environment_separation",
+      "consent_when_applicable"
+    ]
+  },
+  {
+    "id": "wf07",
+    "name": "Documents disponibles",
+    "trigger": "document.ready",
+    "expected_action": "Notifier accès privé signé",
+    "audience": "learner",
+    "status": "SPEC_ONLY",
+    "required_controls": [
+      "authorization",
+      "idempotence",
+      "bounded_retry",
+      "audit_log",
+      "error_alert",
+      "environment_separation",
+      "consent_when_applicable"
+    ]
+  },
+  {
+    "id": "wf08",
+    "name": "Émargement manquant",
+    "trigger": "attendance.missing",
+    "expected_action": "Tâche au formateur",
+    "audience": "trainer",
+    "status": "SPEC_ONLY",
+    "required_controls": [
+      "authorization",
+      "idempotence",
+      "bounded_retry",
+      "audit_log",
+      "error_alert",
+      "environment_separation",
+      "consent_when_applicable"
+    ]
+  },
+  {
+    "id": "wf09",
+    "name": "Quiz final validé",
+    "trigger": "assessment.passed",
+    "expected_action": "Mettre à jour progression par backend canonique",
+    "audience": "learner",
+    "status": "SPEC_ONLY",
+    "required_controls": [
+      "authorization",
+      "idempotence",
+      "bounded_retry",
+      "audit_log",
+      "error_alert",
+      "environment_separation",
+      "consent_when_applicable"
+    ]
+  },
+  {
+    "id": "wf10",
+    "name": "Fin de formation",
+    "trigger": "training.completed",
+    "expected_action": "Préparer attestation et statut alumni",
+    "audience": "learner",
+    "status": "SPEC_ONLY",
+    "required_controls": [
+      "authorization",
+      "idempotence",
+      "bounded_retry",
+      "audit_log",
+      "error_alert",
+      "environment_separation",
+      "consent_when_applicable"
+    ]
+  },
+  {
+    "id": "wf11",
+    "name": "Invitation à annuaire",
+    "trigger": "alumni.directory.invite",
+    "expected_action": "Invitation facultative, pas publication",
+    "audience": "alumni",
+    "status": "SPEC_ONLY",
+    "required_controls": [
+      "authorization",
+      "idempotence",
+      "bounded_retry",
+      "audit_log",
+      "error_alert",
+      "environment_separation",
+      "consent_when_applicable"
+    ]
+  },
+  {
+    "id": "wf12",
+    "name": "Demande annuaire",
+    "trigger": "directory.profile.submitted",
+    "expected_action": "Queue de modération et accusé",
+    "audience": "external_professional",
+    "status": "SPEC_ONLY",
+    "required_controls": [
+      "authorization",
+      "idempotence",
+      "bounded_retry",
+      "audit_log",
+      "error_alert",
+      "environment_separation",
+      "consent_when_applicable"
+    ]
+  },
+  {
+    "id": "wf13",
+    "name": "Publication annuaire",
+    "trigger": "directory.profile.published",
+    "expected_action": "Notification et indexation adaptée",
+    "audience": "external_professional",
+    "status": "SPEC_ONLY",
+    "required_controls": [
+      "authorization",
+      "idempotence",
+      "bounded_retry",
+      "audit_log",
+      "error_alert",
+      "environment_separation",
+      "consent_when_applicable"
+    ]
+  },
+  {
+    "id": "wf14",
+    "name": "Modération communauté",
+    "trigger": "community.report.created",
+    "expected_action": "Alerte modérateur sans exposition inutile",
+    "audience": "moderator",
+    "status": "SPEC_ONLY",
+    "required_controls": [
+      "authorization",
+      "idempotence",
+      "bounded_retry",
+      "audit_log",
+      "error_alert",
+      "environment_separation",
+      "consent_when_applicable"
+    ]
+  },
+  {
+    "id": "wf15",
+    "name": "Demande de site",
+    "trigger": "support.website.qualified",
+    "expected_action": "Vérifier consentement puis transmission POLIVIA",
+    "audience": "support",
+    "status": "SPEC_ONLY",
+    "required_controls": [
+      "authorization",
+      "idempotence",
+      "bounded_retry",
+      "audit_log",
+      "error_alert",
+      "environment_separation",
+      "consent_when_applicable"
+    ]
+  },
+  {
+    "id": "wf16",
+    "name": "Incident/écart qualité",
+    "trigger": "quality.incident.opened",
+    "expected_action": "Alerte et suivi de décision",
+    "audience": "office_admin",
+    "status": "SPEC_ONLY",
+    "required_controls": [
+      "authorization",
+      "idempotence",
+      "bounded_retry",
+      "audit_log",
+      "error_alert",
+      "environment_separation",
+      "consent_when_applicable"
+    ]
+  },
+  {
+    "id": "wf17",
+    "name": "Règlement rapproché",
+    "trigger": "payment.reconciled",
+    "expected_action": "Mise à jour statut ERP, notification autorisée",
+    "audience": "office_admin",
+    "status": "SPEC_ONLY",
+    "required_controls": [
+      "authorization",
+      "idempotence",
+      "bounded_retry",
+      "audit_log",
+      "error_alert",
+      "environment_separation",
+      "consent_when_applicable"
+    ]
+  },
+  {
+    "id": "wf18",
+    "name": "Rapport président",
+    "trigger": "report.periodic.due",
+    "expected_action": "Tableau réel agrégé daté",
+    "audience": "president",
+    "status": "SPEC_ONLY",
+    "required_controls": [
+      "authorization",
+      "idempotence",
+      "bounded_retry",
+      "audit_log",
+      "error_alert",
+      "environment_separation",
+      "consent_when_applicable"
+    ]
+  }
+]

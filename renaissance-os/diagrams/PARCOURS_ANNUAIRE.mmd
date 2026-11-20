@@ -1,0 +1,10 @@
+flowchart LR
+  X[Professionnel externe ou alumni] --> I[Compte gratuit]
+  I --> B[Brouillon fiche]
+  B --> M[Modération / vérification]
+  M -->|acceptée| PUB[Fiche publique]
+  M -->|retour| B
+  M -->|refus| REF[Motif et recours]
+  PUB --> UP[Mise à jour / signalement]
+  UP --> M
+  PUB --> UN[Retrait sur demande]

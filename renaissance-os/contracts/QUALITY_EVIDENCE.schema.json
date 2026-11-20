@@ -1,0 +1,68 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://renaissance.local/contracts/QUALITY_EVIDENCE.schema.json",
+  "title": "QUALITY_EVIDENCE",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "id": {
+      "type": "string",
+      "format": "uuid"
+    },
+    "test_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "commit_sha": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "environment": {
+      "enum": [
+        "local",
+        "isolated",
+        "staging",
+        "production"
+      ]
+    },
+    "result": {
+      "enum": [
+        "PASS",
+        "FAIL",
+        "NOT_RUN",
+        "BLOCKED",
+        "WAIVED"
+      ]
+    },
+    "executed_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "command_or_method": {
+      "type": "string",
+      "minLength": 1
+    },
+    "reviewer": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "artifact_ref": {
+      "type": [
+        "string",
+        "null"
+      ]
+    }
+  },
+  "required": [
+    "id",
+    "test_id",
+    "environment",
+    "result",
+    "executed_at",
+    "command_or_method"
+  ]
+}

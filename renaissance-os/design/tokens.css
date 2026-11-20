@@ -1,0 +1,17 @@
+/* RENAISSANCE — PROPOSITION DE TOKENS, non charte validée */
+:root {
+  --renaissance-forest:#183d36;
+  --renaissance-forest-deep:#102c28;
+  --renaissance-ivory:#f7f5ed;
+  --renaissance-champagne:#c7a878;
+  --renaissance-ink:#1e2b29;
+  --renaissance-muted:#5b6763;
+  --renaissance-surface:#ffffff;
+  --renaissance-outline:#d9ddd5;
+  --renaissance-focus:#166e62;
+  --renaissance-danger:#a83232;
+  --renaissance-radius-small:10px;
+  --renaissance-radius-card:22px;
+  --renaissance-shadow:0 12px 35px rgba(16,44,40,.12);
+  --renaissance-max-content:1200px;
+}

@@ -1,0 +1,354 @@
+[
+  {
+    "id": "W00",
+    "title": "Reprise et sauvegarde non destructive",
+    "depends_on": [],
+    "deliverables": [
+      "Inventaire repo/branches/WIP",
+      "Configuration et états des services en lecture seule",
+      "Résumé de 5 vérités vérifiées"
+    ],
+    "acceptance": [
+      "aucun fichier WIP détruit",
+      "statuts avec preuves"
+    ],
+    "state": "NOT_STARTED_UNTIL_REPO_INSPECTED",
+    "release_policy": "INTERNAL_LOT_NOT_PARTIAL_COMMERCIAL_DELIVERY"
+  },
+  {
+    "id": "W01",
+    "title": "ADR architecture et licence",
+    "depends_on": [
+      "W00"
+    ],
+    "deliverables": [
+      "Carte des flux",
+      "Sources de vérité",
+      "Décision backend/LMS/SSO avec preuves"
+    ],
+    "acceptance": [
+      "ADR versionnés",
+      "pas de migration sans accord"
+    ],
+    "state": "NOT_STARTED_UNTIL_REPO_INSPECTED",
+    "release_policy": "INTERNAL_LOT_NOT_PARTIAL_COMMERCIAL_DELIVERY"
+  },
+  {
+    "id": "W02",
+    "title": "Identités et RBAC",
+    "depends_on": [
+      "W01"
+    ],
+    "deliverables": [
+      "Schéma rôles",
+      "Contrôles server-side",
+      "Tests négatifs A/B"
+    ],
+    "acceptance": [
+      "zéro accès transversal",
+      "audit des grants"
+    ],
+    "state": "NOT_STARTED_UNTIL_REPO_INSPECTED",
+    "release_policy": "INTERNAL_LOT_NOT_PARTIAL_COMMERCIAL_DELIVERY"
+  },
+  {
+    "id": "W03",
+    "title": "Domaine de données et états",
+    "depends_on": [
+      "W01"
+    ],
+    "deliverables": [
+      "Migrations non destructives",
+      "Machine état candidature/session/annuaire",
+      "Outbox"
+    ],
+    "acceptance": [
+      "tests transitions et idempotence",
+      "restauration staging"
+    ],
+    "state": "NOT_STARTED_UNTIL_REPO_INSPECTED",
+    "release_policy": "INTERNAL_LOT_NOT_PARTIAL_COMMERCIAL_DELIVERY"
+  },
+  {
+    "id": "W04",
+    "title": "Design system et shell public",
+    "depends_on": [
+      "W00"
+    ],
+    "deliverables": [
+      "Tokens",
+      "Headers/footers",
+      "Responsive et accessibilité"
+    ],
+    "acceptance": [
+      "captures desktop/mobile",
+      "revue premium"
+    ],
+    "state": "NOT_STARTED_UNTIL_REPO_INSPECTED",
+    "release_policy": "INTERNAL_LOT_NOT_PARTIAL_COMMERCIAL_DELIVERY"
+  },
+  {
+    "id": "W05",
+    "title": "Catalogue et contenus publics",
+    "depends_on": [
+      "W04",
+      "W03"
+    ],
+    "deliverables": [
+      "Quatre formations versionnées",
+      "Sessions réelles ou brouillons",
+      "SEO/canonicals"
+    ],
+    "acceptance": [
+      "prix non validés non publiés",
+      "liens maillage vérifiés"
+    ],
+    "state": "NOT_STARTED_UNTIL_REPO_INSPECTED",
+    "release_policy": "INTERNAL_LOT_NOT_PARTIAL_COMMERCIAL_DELIVERY"
+  },
+  {
+    "id": "W06",
+    "title": "Candidatures et sessions",
+    "depends_on": [
+      "W02",
+      "W03",
+      "W05"
+    ],
+    "deliverables": [
+      "Formulaire multistep",
+      "Gestion capacités/attente",
+      "Dossier administratif"
+    ],
+    "acceptance": [
+      "test dernière place concurrente",
+      "IDOR impossible"
+    ],
+    "state": "NOT_STARTED_UNTIL_REPO_INSPECTED",
+    "release_policy": "INTERNAL_LOT_NOT_PARTIAL_COMMERCIAL_DELIVERY"
+  },
+  {
+    "id": "W07",
+    "title": "Campus LMS et formateurs",
+    "depends_on": [
+      "W02",
+      "W03",
+      "W06"
+    ],
+    "deliverables": [
+      "Cours/quiz/progrès",
+      "Tableaux apprenant/formateur",
+      "Évaluations"
+    ],
+    "acceptance": [
+      "vrai e2e mini formation",
+      "scopes respectés"
+    ],
+    "state": "NOT_STARTED_UNTIL_REPO_INSPECTED",
+    "release_policy": "INTERNAL_LOT_NOT_PARTIAL_COMMERCIAL_DELIVERY"
+  },
+  {
+    "id": "W08",
+    "title": "Documents et qualité pédagogique",
+    "depends_on": [
+      "W06",
+      "W07"
+    ],
+    "deliverables": [
+      "PDF versionnés",
+      "Émargement/preuves",
+      "Réclamations et audit"
+    ],
+    "acceptance": [
+      "attestation liée à preuve",
+      "conservation validable"
+    ],
+    "state": "NOT_STARTED_UNTIL_REPO_INSPECTED",
+    "release_policy": "INTERNAL_LOT_NOT_PARTIAL_COMMERCIAL_DELIVERY"
+  },
+  {
+    "id": "W09",
+    "title": "Frappe CRM et ERPNext",
+    "depends_on": [
+      "W01",
+      "W03"
+    ],
+    "deliverables": [
+      "Inspection API lecture seule",
+      "Adaptateurs idempotents",
+      "Mapping lead/devis/facture"
+    ],
+    "acceptance": [
+      "test réels en staging ou statut bloqué",
+      "pas de doublon de facture"
+    ],
+    "state": "NOT_STARTED_UNTIL_REPO_INSPECTED",
+    "release_policy": "INTERNAL_LOT_NOT_PARTIAL_COMMERCIAL_DELIVERY"
+  },
+  {
+    "id": "W10",
+    "title": "Annuaire national gratuit",
+    "depends_on": [
+      "W02",
+      "W03",
+      "W04"
+    ],
+    "deliverables": [
+      "Inscription externes",
+      "Recherche nationale",
+      "Modération/SEO"
+    ],
+    "acceptance": [
+      "externe sans formation inscrit",
+      "pas de publication sans validation"
+    ],
+    "state": "NOT_STARTED_UNTIL_REPO_INSPECTED",
+    "release_policy": "INTERNAL_LOT_NOT_PARTIAL_COMMERCIAL_DELIVERY"
+  },
+  {
+    "id": "W11",
+    "title": "Communauté",
+    "depends_on": [
+      "W02",
+      "W10"
+    ],
+    "deliverables": [
+      "Choix moteur/SSO",
+      "Forum et modération",
+      "Invitations"
+    ],
+    "acceptance": [
+      "rôles cohérents",
+      "tests abus et signalement"
+    ],
+    "state": "NOT_STARTED_UNTIL_REPO_INSPECTED",
+    "release_policy": "INTERNAL_LOT_NOT_PARTIAL_COMMERCIAL_DELIVERY"
+  },
+  {
+    "id": "W12",
+    "title": "Suivi alumni",
+    "depends_on": [
+      "W07",
+      "W08",
+      "W10"
+    ],
+    "deliverables": [
+      "Compte persistant",
+      "Attestations",
+      "Invitation facultative annuaire/communauté"
+    ],
+    "acceptance": [
+      "aucune publicité automatique",
+      "droits conservation"
+    ],
+    "state": "NOT_STARTED_UNTIL_REPO_INSPECTED",
+    "release_policy": "INTERNAL_LOT_NOT_PARTIAL_COMMERCIAL_DELIVERY"
+  },
+  {
+    "id": "W13",
+    "title": "Support et POLIVIA",
+    "depends_on": [
+      "W02",
+      "W03"
+    ],
+    "deliverables": [
+      "Tickets",
+      "Qualification",
+      "Transfert consentement"
+    ],
+    "acceptance": [
+      "aucune donnée de formation envoyée",
+      "trace transfert"
+    ],
+    "state": "NOT_STARTED_UNTIL_REPO_INSPECTED",
+    "release_policy": "INTERNAL_LOT_NOT_PARTIAL_COMMERCIAL_DELIVERY"
+  },
+  {
+    "id": "W14",
+    "title": "Automatisations n8n",
+    "depends_on": [
+      "W03",
+      "W06",
+      "W09",
+      "W13"
+    ],
+    "deliverables": [
+      "Événements/outbox",
+      "Workflows utiles existants",
+      "Alertes/retries"
+    ],
+    "acceptance": [
+      "no 403 bypass",
+      "replays idempotents"
+    ],
+    "state": "NOT_STARTED_UNTIL_REPO_INSPECTED",
+    "release_policy": "INTERNAL_LOT_NOT_PARTIAL_COMMERCIAL_DELIVERY"
+  },
+  {
+    "id": "W15",
+    "title": "Cockpit et supervision",
+    "depends_on": [
+      "W06",
+      "W08",
+      "W09",
+      "W10",
+      "W13"
+    ],
+    "deliverables": [
+      "KPIs vraies données",
+      "Livrables par statut",
+      "Audit décisions"
+    ],
+    "acceptance": [
+      "aucun nombre démo présenté réel",
+      "permissions président/admin"
+    ],
+    "state": "NOT_STARTED_UNTIL_REPO_INSPECTED",
+    "release_policy": "INTERNAL_LOT_NOT_PARTIAL_COMMERCIAL_DELIVERY"
+  },
+  {
+    "id": "W16",
+    "title": "Recette intégrale et hardening",
+    "depends_on": [
+      "W05",
+      "W06",
+      "W07",
+      "W08",
+      "W09",
+      "W10",
+      "W11",
+      "W12",
+      "W13",
+      "W14",
+      "W15"
+    ],
+    "deliverables": [
+      "Tous tests E2E",
+      "Sécurité/SEO/a11y/perf",
+      "Restaurations/rollback"
+    ],
+    "acceptance": [
+      "0 QA blocker FAIL/NOT_RUN pour publication",
+      "reviewer indépendant"
+    ],
+    "state": "NOT_STARTED_UNTIL_REPO_INSPECTED",
+    "release_policy": "INTERNAL_LOT_NOT_PARTIAL_COMMERCIAL_DELIVERY"
+  },
+  {
+    "id": "W17",
+    "title": "Préparation lancement et approbation",
+    "depends_on": [
+      "W16"
+    ],
+    "deliverables": [
+      "Runbook",
+      "Plan production",
+      "Go/no-go humain"
+    ],
+    "acceptance": [
+      "production non lancée sans autorisation",
+      "preuves de recette archivées"
+    ],
+    "state": "NOT_STARTED_UNTIL_REPO_INSPECTED",
+    "release_policy": "INTERNAL_LOT_NOT_PARTIAL_COMMERCIAL_DELIVERY"
+  }
+]

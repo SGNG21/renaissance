@@ -1,0 +1,13 @@
+{
+  "id": "00000000-0000-4000-8000-000000000001",
+  "slug": "demo-decouverte-metier",
+  "title": "DEMONSTRATION — Découverte du métier",
+  "version": 1,
+  "description": "Contenu synthétique, non publiable",
+  "status": "draft",
+  "published_price_eur": null,
+  "price_approved": false,
+  "prerequisites": [],
+  "accessibility_contact": null,
+  "updated_at": "2026-11-20T12:00:00+01:00"
+}

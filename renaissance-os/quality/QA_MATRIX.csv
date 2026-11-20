@@ -1,0 +1,217 @@
+id,domain,domain_name,assertion,severity,status,evidence_ref,reviewer,notes
+RE-DISCOVERY-001,DISCOVERY,DISCOVERY,Identifier dépôt et branche canonique par commit avant toute modification,MAJOR,NOT_RUN,,,Assertion de recette spécifique — adapter preuves et tests au stack réel
+RE-DISCOVERY-002,DISCOVERY,DISCOVERY,Exécuter git status et préserver WIP/stashes/worktrees non suivis,BLOCKER,NOT_RUN,,,Assertion de recette spécifique — adapter preuves et tests au stack réel
+RE-DISCOVERY-003,DISCOVERY,DISCOVERY,Recensser les migrations existantes sans les exécuter sur production,MAJOR,NOT_RUN,,,Assertion de recette spécifique — adapter preuves et tests au stack réel
+RE-DISCOVERY-004,DISCOVERY,DISCOVERY,Identifier les services Frappe CRM/ERPNext/n8n uniquement via preuves accessibles,NORMAL,NOT_RUN,,,Assertion de recette spécifique — adapter preuves et tests au stack réel
+RE-DISCOVERY-005,DISCOVERY,DISCOVERY,"Qualifier les URLs de preview, protections SSO et versions réelles",NORMAL,NOT_RUN,,,Assertion de recette spécifique — adapter preuves et tests au stack réel
+RE-DISCOVERY-006,DISCOVERY,DISCOVERY,Identifier les documents de gouvernance existants et leur priorité,NORMAL,NOT_RUN,,,Assertion de recette spécifique — adapter preuves et tests au stack réel
+RE-DISCOVERY-007,DISCOVERY,DISCOVERY,Conserver les originaux et vérifier les licences des assets importés,MAJOR,NOT_RUN,,,Assertion de recette spécifique — adapter preuves et tests au stack réel
+RE-DISCOVERY-008,DISCOVERY,DISCOVERY,Qualifier chaque module DÉCLARÉ/IMPLÉMENTÉ/TESTÉ/OPÉRATIONNEL,MAJOR,NOT_RUN,,,Assertion de recette spécifique — adapter preuves et tests au stack réel
+RE-DISCOVERY-009,DISCOVERY,DISCOVERY,Rattacher le diagnostic à la version commit et environnement,MAJOR,NOT_RUN,,,Assertion de recette spécifique — adapter preuves et tests au stack réel
+RE-DISCOVERY-010,DISCOVERY,DISCOVERY,Vérifier que les identifiants et secrets ne sont jamais affichés en sortie,BLOCKER,NOT_RUN,,,Assertion de recette spécifique — adapter preuves et tests au stack réel
+RE-DISCOVERY-011,DISCOVERY,DISCOVERY,Détecter les conflits entre v1 Supabase et décisions Frappe sans migration,NORMAL,NOT_RUN,,,Assertion de recette spécifique — adapter preuves et tests au stack réel
+RE-DISCOVERY-012,DISCOVERY,DISCOVERY,Produire un delta précis des travaux manquants sans ré-audit global,MAJOR,NOT_RUN,,,Assertion de recette spécifique — adapter preuves et tests au stack réel
+RE-BRAND-001,BRAND,BRAND,Respecter le logo et la charte approuvés plutôt que le seul prototype,MAJOR,NOT_RUN,,,Assertion de recette spécifique — adapter preuves et tests au stack réel
+RE-BRAND-002,BRAND,BRAND,"Visualiser accueil sur 360, 768 et 1440 px en vrai navigateur",MAJOR,NOT_RUN,,,Assertion de recette spécifique — adapter preuves et tests au stack réel
+RE-BRAND-003,BRAND,BRAND,Visualiser fiche formation et parcours d’inscription sur mobile,MAJOR,NOT_RUN,,,Assertion de recette spécifique — adapter preuves et tests au stack réel
+RE-BRAND-004,BRAND,BRAND,Vérifier lisibilité titres et hiérarchie éditoriale,NORMAL,NOT_RUN,,,Assertion de recette spécifique — adapter preuves et tests au stack réel
+RE-BRAND-005,BRAND,BRAND,"Contraster texte, boutons et états d’erreur selon WCAG 2.2 AA",NORMAL,NOT_RUN,,,Assertion de recette spécifique — adapter preuves et tests au stack réel
+RE-BRAND-006,BRAND,BRAND,Garantir navigation clavier et focus visibles pour tous composants visuels,BLOCKER,NOT_RUN,,,Assertion de recette spécifique — adapter preuves et tests au stack réel
+RE-BRAND-007,BRAND,BRAND,"Vérifier droits de chaque photo, portrait et illustration affichée",BLOCKER,NOT_RUN,,,Assertion de recette spécifique — adapter preuves et tests au stack réel
+RE-BRAND-008,BRAND,BRAND,Contrôler cohérence des tokens sémantiques sur site et espaces privés,MAJOR,NOT_RUN,,,Assertion de recette spécifique — adapter preuves et tests au stack réel
+RE-BRAND-009,BRAND,BRAND,Vérifier que la motion respecte prefers-reduced-motion,MAJOR,NOT_RUN,,,Assertion de recette spécifique — adapter preuves et tests au stack réel
+RE-BRAND-010,BRAND,BRAND,"Confirmer absence de faux avis, chiffres, labels ou prix dans le design",NORMAL,NOT_RUN,,,Assertion de recette spécifique — adapter preuves et tests au stack réel
+RE-BRAND-011,BRAND,BRAND,"Tester erreurs, loaders et états vides sur les écrans maîtres",NORMAL,NOT_RUN,,,Assertion de recette spécifique — adapter preuves et tests au stack réel
+RE-BRAND-012,BRAND,BRAND,Obtenir une revue visuelle indépendante avant validation de la DA,MAJOR,NOT_RUN,,,Assertion de recette spécifique — adapter preuves et tests au stack réel
+RE-PUBLIC-001,PUBLIC,PUBLIC,Rendre l’accueil accessible et contenu conforme à la source validée,MAJOR,NOT_RUN,,,Assertion de recette spécifique — adapter preuves et tests au stack réel
+RE-PUBLIC-002,PUBLIC,PUBLIC,Présenter les quatre formations avec statut et prix validé,MAJOR,NOT_RUN,,,Assertion de recette spécifique — adapter preuves et tests au stack réel
+RE-PUBLIC-003,PUBLIC,PUBLIC,"Afficher fiche détaillée, prérequis, accessibilité et programme versionné",MAJOR,NOT_RUN,,,Assertion de recette spécifique — adapter preuves et tests au stack réel
+RE-PUBLIC-004,PUBLIC,PUBLIC,Relier les cartes formations au calendrier et aux inscriptions,NORMAL,NOT_RUN,,,Assertion de recette spécifique — adapter preuves et tests au stack réel
+RE-PUBLIC-005,PUBLIC,PUBLIC,Ne jamais afficher une date ou une capacité de session fictive,BLOCKER,NOT_RUN,,,Assertion de recette spécifique — adapter preuves et tests au stack réel
+RE-PUBLIC-006,PUBLIC,PUBLIC,Rendre contact et formulaires utilisables sur mobile,NORMAL,NOT_RUN,,,Assertion de recette spécifique — adapter preuves et tests au stack réel
+RE-PUBLIC-007,PUBLIC,PUBLIC,Valider le dispositif antispam et le retour d’erreur formulaire,MAJOR,NOT_RUN,,,Assertion de recette spécifique — adapter preuves et tests au stack réel
+RE-PUBLIC-008,PUBLIC,PUBLIC,Gérer pages 404 et redirections sans lien cassé,MAJOR,NOT_RUN,,,Assertion de recette spécifique — adapter preuves et tests au stack réel
+RE-PUBLIC-009,PUBLIC,PUBLIC,Rendre documents légaux accessibles en footer et navigation,MAJOR,NOT_RUN,,,Assertion de recette spécifique — adapter preuves et tests au stack réel
+RE-PUBLIC-010,PUBLIC,PUBLIC,Ne publier aucune affirmation sur certification/financement non vérifiée,BLOCKER,NOT_RUN,,,Assertion de recette spécifique — adapter preuves et tests au stack réel
+RE-PUBLIC-011,PUBLIC,PUBLIC,"Contrôler images responsives, tailles et texte alternatif",NORMAL,NOT_RUN,,,Assertion de recette spécifique — adapter preuves et tests au stack réel
+RE-PUBLIC-012,PUBLIC,PUBLIC,Tester toutes les routes publiques sur preview réelle,MAJOR,NOT_RUN,,,Assertion de recette spécifique — adapter preuves et tests au stack réel
+RE-SEO-001,SEO,SEO,Valider title et meta description uniques pour chaque route publique,MAJOR,NOT_RUN,,,Assertion de recette spécifique — adapter preuves et tests au stack réel
+RE-SEO-002,SEO,SEO,Générer canonical correct pour chaque formation et profil publié,MAJOR,NOT_RUN,,,Assertion de recette spécifique — adapter preuves et tests au stack réel
+RE-SEO-003,SEO,SEO,Exclure les fiches annuaire brouillon/rejetées du sitemap,BLOCKER,NOT_RUN,,,Assertion de recette spécifique — adapter preuves et tests au stack réel
+RE-SEO-004,SEO,SEO,Vérifier robots/noindex des espaces apprenant/admin,BLOCKER,NOT_RUN,,,Assertion de recette spécifique — adapter preuves et tests au stack réel
+RE-SEO-005,SEO,SEO,Générer sitemap avec uniquement URLs HTTP 200 indexables,NORMAL,NOT_RUN,,,Assertion de recette spécifique — adapter preuves et tests au stack réel
+RE-SEO-006,SEO,SEO,Vérifier schéma Course et Event uniquement avec faits confirmés,NORMAL,NOT_RUN,,,Assertion de recette spécifique — adapter preuves et tests au stack réel
+RE-SEO-007,SEO,SEO,"Établir liens contextuels formations, sessions, annuaire et blog",MAJOR,NOT_RUN,,,Assertion de recette spécifique — adapter preuves et tests au stack réel
+RE-SEO-008,SEO,SEO,Vérifier absence de pages indexables orphelines,MAJOR,NOT_RUN,,,Assertion de recette spécifique — adapter preuves et tests au stack réel
+RE-SEO-009,SEO,SEO,Rendre pages Yonne/Joigny/Sens/Auxerre originales et justifiées,MAJOR,NOT_RUN,,,Assertion de recette spécifique — adapter preuves et tests au stack réel
+RE-SEO-010,SEO,SEO,Contrôler aucune implantation locale inventée dans les contenus,BLOCKER,NOT_RUN,,,Assertion de recette spécifique — adapter preuves et tests au stack réel
+RE-SEO-011,SEO,SEO,Verrouiller les redirections permanentes de slugs modifiés,NORMAL,NOT_RUN,,,Assertion de recette spécifique — adapter preuves et tests au stack réel
+RE-SEO-012,SEO,SEO,Distinguer test indexabilité des résultats réels Search Console,MAJOR,NOT_RUN,,,Assertion de recette spécifique — adapter preuves et tests au stack réel
+RE-APPLICATION-001,APPLICATION,APPLICATION,Enregistrer candidature avec identifiant stable et auteur,MAJOR,NOT_RUN,,,Assertion de recette spécifique — adapter preuves et tests au stack réel
+RE-APPLICATION-002,APPLICATION,APPLICATION,Permettre brouillon interrompu et reprise authentifiée,BLOCKER,NOT_RUN,,,Assertion de recette spécifique — adapter preuves et tests au stack réel
+RE-APPLICATION-003,APPLICATION,APPLICATION,Valider les champs et pièces côté serveur,BLOCKER,NOT_RUN,,,Assertion de recette spécifique — adapter preuves et tests au stack réel
+RE-APPLICATION-004,APPLICATION,APPLICATION,Verrouiller les transitions candidature selon rôle et état,BLOCKER,NOT_RUN,,,Assertion de recette spécifique — adapter preuves et tests au stack réel
+RE-APPLICATION-005,APPLICATION,APPLICATION,Empêcher candidat A de lire ou modifier candidat B,BLOCKER,NOT_RUN,,,Assertion de recette spécifique — adapter preuves et tests au stack réel
+RE-APPLICATION-006,APPLICATION,APPLICATION,Émettre des notifications transactionnelles une seule fois,BLOCKER,NOT_RUN,,,Assertion de recette spécifique — adapter preuves et tests au stack réel
+RE-APPLICATION-007,APPLICATION,APPLICATION,Garantir reprise après échec du CRM sans perdre la candidature,MAJOR,NOT_RUN,,,Assertion de recette spécifique — adapter preuves et tests au stack réel
+RE-APPLICATION-008,APPLICATION,APPLICATION,Ne pas créer plusieurs dossiers pour une double soumission,MAJOR,NOT_RUN,,,Assertion de recette spécifique — adapter preuves et tests au stack réel
+RE-APPLICATION-009,APPLICATION,APPLICATION,Afficher documents manquants et retours de décision authentiques,MAJOR,NOT_RUN,,,Assertion de recette spécifique — adapter preuves et tests au stack réel
+RE-APPLICATION-010,APPLICATION,APPLICATION,Contrôler permission de consultation des pièces uploadées,BLOCKER,NOT_RUN,,,Assertion de recette spécifique — adapter preuves et tests au stack réel
+RE-APPLICATION-011,APPLICATION,APPLICATION,Conserver historique et raison de la décision,NORMAL,NOT_RUN,,,Assertion de recette spécifique — adapter preuves et tests au stack réel
+RE-APPLICATION-012,APPLICATION,APPLICATION,Tester le parcours candidature complet en staging,MAJOR,NOT_RUN,,,Assertion de recette spécifique — adapter preuves et tests au stack réel
+RE-SESSIONS-001,SESSIONS,SESSIONS,Créer session liée à une version publiée de cursus,MAJOR,NOT_RUN,,,Assertion de recette spécifique — adapter preuves et tests au stack réel
+RE-SESSIONS-002,SESSIONS,SESSIONS,Configurer 2–10 participants historiquement envisagés sans hardcoder,BLOCKER,NOT_RUN,,,Assertion de recette spécifique — adapter preuves et tests au stack réel
+RE-SESSIONS-003,SESSIONS,SESSIONS,Publier uniquement dates et lieux approuvés,BLOCKER,NOT_RUN,,,Assertion de recette spécifique — adapter preuves et tests au stack réel
+RE-SESSIONS-004,SESSIONS,SESSIONS,Empêcher réservation au-delà de capacité transactionnelle,BLOCKER,NOT_RUN,,,Assertion de recette spécifique — adapter preuves et tests au stack réel
+RE-SESSIONS-005,SESSIONS,SESSIONS,Gérer simultanément deux réservations de la dernière place,BLOCKER,NOT_RUN,,,Assertion de recette spécifique — adapter preuves et tests au stack réel
+RE-SESSIONS-006,SESSIONS,SESSIONS,Assurer listes d’attente et transitions d’état cohérentes,BLOCKER,NOT_RUN,,,Assertion de recette spécifique — adapter preuves et tests au stack réel
+RE-SESSIONS-007,SESSIONS,SESSIONS,Limiter les affectations formateurs aux permissions autorisées,MAJOR,NOT_RUN,,,Assertion de recette spécifique — adapter preuves et tests au stack réel
+RE-SESSIONS-008,SESSIONS,SESSIONS,Gérer modification ou annulation et notifications compensatoires,MAJOR,NOT_RUN,,,Assertion de recette spécifique — adapter preuves et tests au stack réel
+RE-SESSIONS-009,SESSIONS,SESSIONS,Garantir cohérence calendrier public et tableau administrateur,MAJOR,NOT_RUN,,,Assertion de recette spécifique — adapter preuves et tests au stack réel
+RE-SESSIONS-010,SESSIONS,SESSIONS,Interdire inscriptions à une session archivée/annulée,BLOCKER,NOT_RUN,,,Assertion de recette spécifique — adapter preuves et tests au stack réel
+RE-SESSIONS-011,SESSIONS,SESSIONS,Journaliser nombre de places et réservation idempotente,NORMAL,NOT_RUN,,,Assertion de recette spécifique — adapter preuves et tests au stack réel
+RE-SESSIONS-012,SESSIONS,SESSIONS,"Tester création, clôture et annulation session de bout en bout",MAJOR,NOT_RUN,,,Assertion de recette spécifique — adapter preuves et tests au stack réel
+RE-IDENTITY-001,IDENTITY,IDENTITY,Définir identifiant canonique et rapprochement inter-applications,MAJOR,NOT_RUN,,,Assertion de recette spécifique — adapter preuves et tests au stack réel
+RE-IDENTITY-002,IDENTITY,IDENTITY,Empêcher l’auto-attribution des rôles président et administrateur,BLOCKER,NOT_RUN,,,Assertion de recette spécifique — adapter preuves et tests au stack réel
+RE-IDENTITY-003,IDENTITY,IDENTITY,Tester candidats A/B sans IDOR sur API et documents,BLOCKER,NOT_RUN,,,Assertion de recette spécifique — adapter preuves et tests au stack réel
+RE-IDENTITY-004,IDENTITY,IDENTITY,Appliquer les décisions RBAC sur serveur et non seulement dans l’UI,BLOCKER,NOT_RUN,,,Assertion de recette spécifique — adapter preuves et tests au stack réel
+RE-IDENTITY-005,IDENTITY,IDENTITY,Tester ancien apprenant vs professionnel externe sans accès cours privé,BLOCKER,NOT_RUN,,,Assertion de recette spécifique — adapter preuves et tests au stack réel
+RE-IDENTITY-006,IDENTITY,IDENTITY,"Vérifier session expirée, révocation et invalidation des jetons",BLOCKER,NOT_RUN,,,Assertion de recette spécifique — adapter preuves et tests au stack réel
+RE-IDENTITY-007,IDENTITY,IDENTITY,Empêcher user externe de lire dossiers pédagogiques/financiers,MAJOR,NOT_RUN,,,Assertion de recette spécifique — adapter preuves et tests au stack réel
+RE-IDENTITY-008,IDENTITY,IDENTITY,Limiter formateur aux sessions et apprenants assignés,MAJOR,NOT_RUN,,,Assertion de recette spécifique — adapter preuves et tests au stack réel
+RE-IDENTITY-009,IDENTITY,IDENTITY,Activer MFA sur accès d’administration sensible selon politique,MAJOR,NOT_RUN,,,Assertion de recette spécifique — adapter preuves et tests au stack réel
+RE-IDENTITY-010,IDENTITY,IDENTITY,Ne jamais exposer secrets/token d’intégration au navigateur,BLOCKER,NOT_RUN,,,Assertion de recette spécifique — adapter preuves et tests au stack réel
+RE-IDENTITY-011,IDENTITY,IDENTITY,Journaliser création/révocation d’un droit avec acteur,NORMAL,NOT_RUN,,,Assertion de recette spécifique — adapter preuves et tests au stack réel
+RE-IDENTITY-012,IDENTITY,IDENTITY,Revoir indépendamment les stratégies RLS/SSO avant production,MAJOR,NOT_RUN,,,Assertion de recette spécifique — adapter preuves et tests au stack réel
+RE-LMS-001,LMS,LMS,Créer et publier cours/version avec contrôle éditorial,MAJOR,NOT_RUN,,,Assertion de recette spécifique — adapter preuves et tests au stack réel
+RE-LMS-002,LMS,LMS,Lier session réelle et groupe LMS sans duplication de progrès,BLOCKER,NOT_RUN,,,Assertion de recette spécifique — adapter preuves et tests au stack réel
+RE-LMS-003,LMS,LMS,Rendre le lecteur de cours accessible au clavier,BLOCKER,NOT_RUN,,,Assertion de recette spécifique — adapter preuves et tests au stack réel
+RE-LMS-004,LMS,LMS,Enregistrer progression par apprenant et leçon,BLOCKER,NOT_RUN,,,Assertion de recette spécifique — adapter preuves et tests au stack réel
+RE-LMS-005,LMS,LMS,Gérer quiz raté puis réussi avec historique distinct,BLOCKER,NOT_RUN,,,Assertion de recette spécifique — adapter preuves et tests au stack réel
+RE-LMS-006,LMS,LMS,Empêcher modification rétroactive des preuves pédagogiques,BLOCKER,NOT_RUN,,,Assertion de recette spécifique — adapter preuves et tests au stack réel
+RE-LMS-007,LMS,LMS,Garantir pièces pédagogiques privées et accès par rôle,MAJOR,NOT_RUN,,,Assertion de recette spécifique — adapter preuves et tests au stack réel
+RE-LMS-008,LMS,LMS,Verrouiller émission attestations sur résultats prouvés,MAJOR,NOT_RUN,,,Assertion de recette spécifique — adapter preuves et tests au stack réel
+RE-LMS-009,LMS,LMS,Conserver évaluation et tentative malgré panne réseau,MAJOR,NOT_RUN,,,Assertion de recette spécifique — adapter preuves et tests au stack réel
+RE-LMS-010,LMS,LMS,Tester rétention et export des résultats de cours,BLOCKER,NOT_RUN,,,Assertion de recette spécifique — adapter preuves et tests au stack réel
+RE-LMS-011,LMS,LMS,Verifier SSO entre Renaissance et LMS sans compte doublonné,NORMAL,NOT_RUN,,,Assertion de recette spécifique — adapter preuves et tests au stack réel
+RE-LMS-012,LMS,LMS,Exécuter parcours mini-formation réel en staging,MAJOR,NOT_RUN,,,Assertion de recette spécifique — adapter preuves et tests au stack réel
+RE-TRAINER-001,TRAINER,TRAINER,Afficher uniquement sessions réellement affectées au formateur,MAJOR,NOT_RUN,,,Assertion de recette spécifique — adapter preuves et tests au stack réel
+RE-TRAINER-002,TRAINER,TRAINER,Exclure les apprenants des autres sessions des listes du formateur,MAJOR,NOT_RUN,,,Assertion de recette spécifique — adapter preuves et tests au stack réel
+RE-TRAINER-003,TRAINER,TRAINER,Permettre saisie présence horodatée avec auteur,MAJOR,NOT_RUN,,,Assertion de recette spécifique — adapter preuves et tests au stack réel
+RE-TRAINER-004,TRAINER,TRAINER,Permettre correction présence justifiée et historisée,NORMAL,NOT_RUN,,,Assertion de recette spécifique — adapter preuves et tests au stack réel
+RE-TRAINER-005,TRAINER,TRAINER,Gérer évaluations selon barème lié à la version du cours,NORMAL,NOT_RUN,,,Assertion de recette spécifique — adapter preuves et tests au stack réel
+RE-TRAINER-006,TRAINER,TRAINER,Interdire au formateur accès à la facturation ERP globale,NORMAL,NOT_RUN,,,Assertion de recette spécifique — adapter preuves et tests au stack réel
+RE-TRAINER-007,TRAINER,TRAINER,Protéger les documents privés de l’apprenant,MAJOR,NOT_RUN,,,Assertion de recette spécifique — adapter preuves et tests au stack réel
+RE-TRAINER-008,TRAINER,TRAINER,Afficher planning cohérent avec sessions back-office,MAJOR,NOT_RUN,,,Assertion de recette spécifique — adapter preuves et tests au stack réel
+RE-TRAINER-009,TRAINER,TRAINER,Verifier notifications travaux à corriger sans données excessives,MAJOR,NOT_RUN,,,Assertion de recette spécifique — adapter preuves et tests au stack réel
+RE-TRAINER-010,TRAINER,TRAINER,Empêcher élévation rôle via formulaires formateur,NORMAL,NOT_RUN,,,Assertion de recette spécifique — adapter preuves et tests au stack réel
+RE-TRAINER-011,TRAINER,TRAINER,Tester tableau et formulaires sur smartphone,NORMAL,NOT_RUN,,,Assertion de recette spécifique — adapter preuves et tests au stack réel
+RE-TRAINER-012,TRAINER,TRAINER,Obtenir validation fonctionnelle par utilisateur formateur autorisé,MAJOR,NOT_RUN,,,Assertion de recette spécifique — adapter preuves et tests au stack réel
+RE-DOCUMENTS-001,DOCUMENTS,DOCUMENTS,Générer modèle PDF depuis version approuvée et données vérifiées,MAJOR,NOT_RUN,,,Assertion de recette spécifique — adapter preuves et tests au stack réel
+RE-DOCUMENTS-002,DOCUMENTS,DOCUMENTS,"Rattacher toute attestation à session, personne et preuve pédagogiques",BLOCKER,NOT_RUN,,,Assertion de recette spécifique — adapter preuves et tests au stack réel
+RE-DOCUMENTS-003,DOCUMENTS,DOCUMENTS,Empêcher émission de certificat sans droits ni préconditions,BLOCKER,NOT_RUN,,,Assertion de recette spécifique — adapter preuves et tests au stack réel
+RE-DOCUMENTS-004,DOCUMENTS,DOCUMENTS,"Versionner programmes, conventions et pièces associées",BLOCKER,NOT_RUN,,,Assertion de recette spécifique — adapter preuves et tests au stack réel
+RE-DOCUMENTS-005,DOCUMENTS,DOCUMENTS,Verifier documents stockés de façon privée et URLs temporaires,BLOCKER,NOT_RUN,,,Assertion de recette spécifique — adapter preuves et tests au stack réel
+RE-DOCUMENTS-006,DOCUMENTS,DOCUMENTS,Prévoir émargement et corrections traçables si applicable,BLOCKER,NOT_RUN,,,Assertion de recette spécifique — adapter preuves et tests au stack réel
+RE-DOCUMENTS-007,DOCUMENTS,DOCUMENTS,Éviter toute information Qualiopi ou NDA inventée,MAJOR,NOT_RUN,,,Assertion de recette spécifique — adapter preuves et tests au stack réel
+RE-DOCUMENTS-008,DOCUMENTS,DOCUMENTS,Garder historique des consentements contractuels appropriés,MAJOR,NOT_RUN,,,Assertion de recette spécifique — adapter preuves et tests au stack réel
+RE-DOCUMENTS-009,DOCUMENTS,DOCUMENTS,Permettre export preuves sans exposer des données d’autres candidats,MAJOR,NOT_RUN,,,Assertion de recette spécifique — adapter preuves et tests au stack réel
+RE-DOCUMENTS-010,DOCUMENTS,DOCUMENTS,"Contrôler MIME, taille et sécurité de chaque upload",BLOCKER,NOT_RUN,,,Assertion de recette spécifique — adapter preuves et tests au stack réel
+RE-DOCUMENTS-011,DOCUMENTS,DOCUMENTS,Verifier conditions juridiques de signature et conservation,NORMAL,NOT_RUN,,,Assertion de recette spécifique — adapter preuves et tests au stack réel
+RE-DOCUMENTS-012,DOCUMENTS,DOCUMENTS,"Tester création, accès, révocation et restauration documentaire",MAJOR,NOT_RUN,,,Assertion de recette spécifique — adapter preuves et tests au stack réel
+RE-CRM-001,CRM,CRM,Confirmer instance et version Frappe CRM réellement installée,MAJOR,NOT_RUN,,,Assertion de recette spécifique — adapter preuves et tests au stack réel
+RE-CRM-002,CRM,CRM,Lire les champs et permissions par compte service à droits minimaux,BLOCKER,NOT_RUN,,,Assertion de recette spécifique — adapter preuves et tests au stack réel
+RE-CRM-003,CRM,CRM,Définir mapping lead/contact/opportunité sans dupliquer dossier,BLOCKER,NOT_RUN,,,Assertion de recette spécifique — adapter preuves et tests au stack réel
+RE-CRM-004,CRM,CRM,Enregistrer provenance de la demande et consentement adapté,BLOCKER,NOT_RUN,,,Assertion de recette spécifique — adapter preuves et tests au stack réel
+RE-CRM-005,CRM,CRM,Empêcher création d’une opportunité sur simple inscription annuaire,BLOCKER,NOT_RUN,,,Assertion de recette spécifique — adapter preuves et tests au stack réel
+RE-CRM-006,CRM,CRM,Tester retry CRM sans double lead logique,BLOCKER,NOT_RUN,,,Assertion de recette spécifique — adapter preuves et tests au stack réel
+RE-CRM-007,CRM,CRM,Conserver candidature source quand CRM indisponible,MAJOR,NOT_RUN,,,Assertion de recette spécifique — adapter preuves et tests au stack réel
+RE-CRM-008,CRM,CRM,Vérifier intégration native Frappe CRM/ERPNext selon topologie,MAJOR,NOT_RUN,,,Assertion de recette spécifique — adapter preuves et tests au stack réel
+RE-CRM-009,CRM,CRM,Contrôler absence de transfert de données pédagogiques intimes,MAJOR,NOT_RUN,,,Assertion de recette spécifique — adapter preuves et tests au stack réel
+RE-CRM-010,CRM,CRM,Masquer identifiants API dans logs et traces,BLOCKER,NOT_RUN,,,Assertion de recette spécifique — adapter preuves et tests au stack réel
+RE-CRM-011,CRM,CRM,Séparer activités Renaissance et POLIVIA dans données CRM,NORMAL,NOT_RUN,,,Assertion de recette spécifique — adapter preuves et tests au stack réel
+RE-CRM-012,CRM,CRM,Exécuter un test d’intégration réel staging ou marquer BLOQUÉ,MAJOR,NOT_RUN,,,Assertion de recette spécifique — adapter preuves et tests au stack réel
+RE-ERP-001,ERP,ERP,"Confirmer ERPNext, société, site, version et API accessibles",MAJOR,NOT_RUN,,,Assertion de recette spécifique — adapter preuves et tests au stack réel
+RE-ERP-002,ERP,ERP,Définir facture canonique et relation avec commande/candidature,BLOCKER,NOT_RUN,,,Assertion de recette spécifique — adapter preuves et tests au stack réel
+RE-ERP-003,ERP,ERP,"Verifier règles fiscales, TVA, prix et mentions avec responsable",BLOCKER,NOT_RUN,,,Assertion de recette spécifique — adapter preuves et tests au stack réel
+RE-ERP-004,ERP,ERP,Empêcher double facture sur webhook paiement répété,BLOCKER,NOT_RUN,,,Assertion de recette spécifique — adapter preuves et tests au stack réel
+RE-ERP-005,ERP,ERP,Refuser paiement falsifié ou montant incohérent,BLOCKER,NOT_RUN,,,Assertion de recette spécifique — adapter preuves et tests au stack réel
+RE-ERP-006,ERP,ERP,Enregistrer chaque règlement/réconciliation une fois logiquement,BLOCKER,NOT_RUN,,,Assertion de recette spécifique — adapter preuves et tests au stack réel
+RE-ERP-007,ERP,ERP,Interdire facture émise pour une société non autorisée,MAJOR,NOT_RUN,,,Assertion de recette spécifique — adapter preuves et tests au stack réel
+RE-ERP-008,ERP,ERP,Conserver piste d’audit crédit/remboursement/annulation,MAJOR,NOT_RUN,,,Assertion de recette spécifique — adapter preuves et tests au stack réel
+RE-ERP-009,ERP,ERP,Tester panne ERP et reprise outbox sans perdre ordre métier,MAJOR,NOT_RUN,,,Assertion de recette spécifique — adapter preuves et tests au stack réel
+RE-ERP-010,ERP,ERP,Protéger données comptables des profils apprenants/externes,BLOCKER,NOT_RUN,,,Assertion de recette spécifique — adapter preuves et tests au stack réel
+RE-ERP-011,ERP,ERP,Vérifier cohérence CRM → ERP et absence de boucle,NORMAL,NOT_RUN,,,Assertion de recette spécifique — adapter preuves et tests au stack réel
+RE-ERP-012,ERP,ERP,Exécuter sandbox+validation finance avant paiement réel,MAJOR,NOT_RUN,,,Assertion de recette spécifique — adapter preuves et tests au stack réel
+RE-DIRECTORY-001,DIRECTORY,DIRECTORY,Autoriser inscription gratuite d’un professionnel non-stagiaire,MAJOR,NOT_RUN,,,Assertion de recette spécifique — adapter preuves et tests au stack réel
+RE-DIRECTORY-002,DIRECTORY,DIRECTORY,Interdire formation ou paiement obligatoire pour fiche de base,BLOCKER,NOT_RUN,,,Assertion de recette spécifique — adapter preuves et tests au stack réel
+RE-DIRECTORY-003,DIRECTORY,DIRECTORY,Conserver profil en brouillon tant que non validé,BLOCKER,NOT_RUN,,,Assertion de recette spécifique — adapter preuves et tests au stack réel
+RE-DIRECTORY-004,DIRECTORY,DIRECTORY,Vérifier permission propriétaire sur modification/suppression,BLOCKER,NOT_RUN,,,Assertion de recette spécifique — adapter preuves et tests au stack réel
+RE-DIRECTORY-005,DIRECTORY,DIRECTORY,Garder coordonnées privées si visibilité non consentie,BLOCKER,NOT_RUN,,,Assertion de recette spécifique — adapter preuves et tests au stack réel
+RE-DIRECTORY-006,DIRECTORY,DIRECTORY,Distinguer identité déclarée de qualification réglementaire vérifiée,BLOCKER,NOT_RUN,,,Assertion de recette spécifique — adapter preuves et tests au stack réel
+RE-DIRECTORY-007,DIRECTORY,DIRECTORY,Permettre modération et signalement d’usurpation,MAJOR,NOT_RUN,,,Assertion de recette spécifique — adapter preuves et tests au stack réel
+RE-DIRECTORY-008,DIRECTORY,DIRECTORY,"Rechercher catégories, villes, zones sans pages artificielles",MAJOR,NOT_RUN,,,Assertion de recette spécifique — adapter preuves et tests au stack réel
+RE-DIRECTORY-009,DIRECTORY,DIRECTORY,Inclure seulement fiches publiques fiables dans sitemap,MAJOR,NOT_RUN,,,Assertion de recette spécifique — adapter preuves et tests au stack réel
+RE-DIRECTORY-010,DIRECTORY,DIRECTORY,Empêcher indexation et accès à une fiche rejetée/suspendue,BLOCKER,NOT_RUN,,,Assertion de recette spécifique — adapter preuves et tests au stack réel
+RE-DIRECTORY-011,DIRECTORY,DIRECTORY,Gérer retrait et demande d’effacement selon politique légale,NORMAL,NOT_RUN,,,Assertion de recette spécifique — adapter preuves et tests au stack réel
+RE-DIRECTORY-012,DIRECTORY,DIRECTORY,Tester parcours externe complet sans parcours de formation,MAJOR,NOT_RUN,,,Assertion de recette spécifique — adapter preuves et tests au stack réel
+RE-COMMUNITY-001,COMMUNITY,COMMUNITY,Confirmer moteur/SSO et règles d’admission des membres,MAJOR,NOT_RUN,,,Assertion de recette spécifique — adapter preuves et tests au stack réel
+RE-COMMUNITY-002,COMMUNITY,COMMUNITY,"Isoler discussions privées des données CRM, candidats et ERP",BLOCKER,NOT_RUN,,,Assertion de recette spécifique — adapter preuves et tests au stack réel
+RE-COMMUNITY-003,COMMUNITY,COMMUNITY,Contrôler droits lecture/écriture selon catégories communautaires,BLOCKER,NOT_RUN,,,Assertion de recette spécifique — adapter preuves et tests au stack réel
+RE-COMMUNITY-004,COMMUNITY,COMMUNITY,"Gérer signalement, modération et appel sans données exposées",BLOCKER,NOT_RUN,,,Assertion de recette spécifique — adapter preuves et tests au stack réel
+RE-COMMUNITY-005,COMMUNITY,COMMUNITY,Empêcher comptes désactivés de publier via API,BLOCKER,NOT_RUN,,,Assertion de recette spécifique — adapter preuves et tests au stack réel
+RE-COMMUNITY-006,COMMUNITY,COMMUNITY,Verifier filtres antispam et limites de fréquence,BLOCKER,NOT_RUN,,,Assertion de recette spécifique — adapter preuves et tests au stack réel
+RE-COMMUNITY-007,COMMUNITY,COMMUNITY,Permettre notifications contrôlables et désabonnement approprié,MAJOR,NOT_RUN,,,Assertion de recette spécifique — adapter preuves et tests au stack réel
+RE-COMMUNITY-008,COMMUNITY,COMMUNITY,Conserver journal et motif d’action modérateur,MAJOR,NOT_RUN,,,Assertion de recette spécifique — adapter preuves et tests au stack réel
+RE-COMMUNITY-009,COMMUNITY,COMMUNITY,Permettre accès alumni et externes selon règle validée,MAJOR,NOT_RUN,,,Assertion de recette spécifique — adapter preuves et tests au stack réel
+RE-COMMUNITY-010,COMMUNITY,COMMUNITY,Vérifier données forum non utilisées pour prospection implicite,BLOCKER,NOT_RUN,,,Assertion de recette spécifique — adapter preuves et tests au stack réel
+RE-COMMUNITY-011,COMMUNITY,COMMUNITY,Adapter thème communauté à Renaissance sans masquer fournisseur,NORMAL,NOT_RUN,,,Assertion de recette spécifique — adapter preuves et tests au stack réel
+RE-COMMUNITY-012,COMMUNITY,COMMUNITY,"Tester création, réponse, signalement et suspension en staging",MAJOR,NOT_RUN,,,Assertion de recette spécifique — adapter preuves et tests au stack réel
+RE-ALUMNI-001,ALUMNI,ALUMNI,Conserver le compte après clôture formation selon contrat,MAJOR,NOT_RUN,,,Assertion de recette spécifique — adapter preuves et tests au stack réel
+RE-ALUMNI-002,ALUMNI,ALUMNI,Permettre accès aux attestations et ressources autorisées,BLOCKER,NOT_RUN,,,Assertion de recette spécifique — adapter preuves et tests au stack réel
+RE-ALUMNI-003,ALUMNI,ALUMNI,Révoquer proprement privilèges apprenant devenus obsolètes,BLOCKER,NOT_RUN,,,Assertion de recette spécifique — adapter preuves et tests au stack réel
+RE-ALUMNI-004,ALUMNI,ALUMNI,Ne pas transférer le dossier pédagogique vers annuaire,BLOCKER,NOT_RUN,,,Assertion de recette spécifique — adapter preuves et tests au stack réel
+RE-ALUMNI-005,ALUMNI,ALUMNI,Inviter à annuaire mais ne jamais auto-publier fiche,BLOCKER,NOT_RUN,,,Assertion de recette spécifique — adapter preuves et tests au stack réel
+RE-ALUMNI-006,ALUMNI,ALUMNI,Gérer consentement et refus d’invitation facultative,BLOCKER,NOT_RUN,,,Assertion de recette spécifique — adapter preuves et tests au stack réel
+RE-ALUMNI-007,ALUMNI,ALUMNI,Assurer continuité de l’identité entre campus et annuaire,MAJOR,NOT_RUN,,,Assertion de recette spécifique — adapter preuves et tests au stack réel
+RE-ALUMNI-008,ALUMNI,ALUMNI,Vérifier accès communauté selon statut approuvé,MAJOR,NOT_RUN,,,Assertion de recette spécifique — adapter preuves et tests au stack réel
+RE-ALUMNI-009,ALUMNI,ALUMNI,Permettre demander site via support sans contact direct POLIVIA,MAJOR,NOT_RUN,,,Assertion de recette spécifique — adapter preuves et tests au stack réel
+RE-ALUMNI-010,ALUMNI,ALUMNI,Empêcher lecture des progressions d’autres alumni,BLOCKER,NOT_RUN,,,Assertion de recette spécifique — adapter preuves et tests au stack réel
+RE-ALUMNI-011,ALUMNI,ALUMNI,Tester rétention et suppression différenciées des données,NORMAL,NOT_RUN,,,Assertion de recette spécifique — adapter preuves et tests au stack réel
+RE-ALUMNI-012,ALUMNI,ALUMNI,Exécuter E2E apprenant → alumni avec session réelle démo,MAJOR,NOT_RUN,,,Assertion de recette spécifique — adapter preuves et tests au stack réel
+RE-SUPPORT-001,SUPPORT,SUPPORT,Créer ticket Renaissance avec identifiant et auteur,MAJOR,NOT_RUN,,,Assertion de recette spécifique — adapter preuves et tests au stack réel
+RE-SUPPORT-002,SUPPORT,SUPPORT,Qualifier demande de site avant transmission POLIVIA,BLOCKER,NOT_RUN,,,Assertion de recette spécifique — adapter preuves et tests au stack réel
+RE-SUPPORT-003,SUPPORT,SUPPORT,Verifier consentement de transfert lorsque nécessaire,BLOCKER,NOT_RUN,,,Assertion de recette spécifique — adapter preuves et tests au stack réel
+RE-SUPPORT-004,SUPPORT,SUPPORT,Empêcher transfert non autorisé ou sans qualification,BLOCKER,NOT_RUN,,,Assertion de recette spécifique — adapter preuves et tests au stack réel
+RE-SUPPORT-005,SUPPORT,SUPPORT,Envoyer payload strictement minimal sans documents pédagogiques,BLOCKER,NOT_RUN,,,Assertion de recette spécifique — adapter preuves et tests au stack réel
+RE-SUPPORT-006,SUPPORT,SUPPORT,Conserver trace transfert et réception sans contenu commercial tiers,BLOCKER,NOT_RUN,,,Assertion de recette spécifique — adapter preuves et tests au stack réel
+RE-SUPPORT-007,SUPPORT,SUPPORT,Empêcher clients POLIVIA de voir support Renaissance sans droit,MAJOR,NOT_RUN,,,Assertion de recette spécifique — adapter preuves et tests au stack réel
+RE-SUPPORT-008,SUPPORT,SUPPORT,Gérer erreurs et retries de transmission idempotents,MAJOR,NOT_RUN,,,Assertion de recette spécifique — adapter preuves et tests au stack réel
+RE-SUPPORT-009,SUPPORT,SUPPORT,Répondre au demandeur via canal support approuvé,MAJOR,NOT_RUN,,,Assertion de recette spécifique — adapter preuves et tests au stack réel
+RE-SUPPORT-010,SUPPORT,SUPPORT,Ne jamais activer un paiement POLIVIA depuis Renaissance par défaut,BLOCKER,NOT_RUN,,,Assertion de recette spécifique — adapter preuves et tests au stack réel
+RE-SUPPORT-011,SUPPORT,SUPPORT,Permettre fermeture et historique de traitement ticket,NORMAL,NOT_RUN,,,Assertion de recette spécifique — adapter preuves et tests au stack réel
+RE-SUPPORT-012,SUPPORT,SUPPORT,Tester demandes site acceptées et refusées de bout en bout,MAJOR,NOT_RUN,,,Assertion de recette spécifique — adapter preuves et tests au stack réel
+RE-AUTOMATION-001,AUTOMATION,AUTOMATION,Inventorier workflows n8n existants sans créer de doublons,MAJOR,NOT_RUN,,,Assertion de recette spécifique — adapter preuves et tests au stack réel
+RE-AUTOMATION-002,AUTOMATION,AUTOMATION,Vérifier authentification/API sans contourner 403/Basic Auth,BLOCKER,NOT_RUN,,,Assertion de recette spécifique — adapter preuves et tests au stack réel
+RE-AUTOMATION-003,AUTOMATION,AUTOMATION,Conserver événement métier canonique avant traitement externe,BLOCKER,NOT_RUN,,,Assertion de recette spécifique — adapter preuves et tests au stack réel
+RE-AUTOMATION-004,AUTOMATION,AUTOMATION,Verifier signature ou contrôle de source de tout webhook,BLOCKER,NOT_RUN,,,Assertion de recette spécifique — adapter preuves et tests au stack réel
+RE-AUTOMATION-005,AUTOMATION,AUTOMATION,Assurer idempotence des notifications et des effets métier,BLOCKER,NOT_RUN,,,Assertion de recette spécifique — adapter preuves et tests au stack réel
+RE-AUTOMATION-006,AUTOMATION,AUTOMATION,"Plafonner retries, délai et volume de messages émis",BLOCKER,NOT_RUN,,,Assertion de recette spécifique — adapter preuves et tests au stack réel
+RE-AUTOMATION-007,AUTOMATION,AUTOMATION,Gérer dead-letter/erreurs visibles avec responsable,MAJOR,NOT_RUN,,,Assertion de recette spécifique — adapter preuves et tests au stack réel
+RE-AUTOMATION-008,AUTOMATION,AUTOMATION,Exclure campagnes marketing sans base légale adéquate,MAJOR,NOT_RUN,,,Assertion de recette spécifique — adapter preuves et tests au stack réel
+RE-AUTOMATION-009,AUTOMATION,AUTOMATION,Ne pas accorder de rôles/paiements depuis n8n seul,MAJOR,NOT_RUN,,,Assertion de recette spécifique — adapter preuves et tests au stack réel
+RE-AUTOMATION-010,AUTOMATION,AUTOMATION,Empêcher toute fuite de secrets et PII dans historiques workflow,BLOCKER,NOT_RUN,,,Assertion de recette spécifique — adapter preuves et tests au stack réel
+RE-AUTOMATION-011,AUTOMATION,AUTOMATION,Isoler compte et exécutions Renaissance de POLIVIA,NORMAL,NOT_RUN,,,Assertion de recette spécifique — adapter preuves et tests au stack réel
+RE-AUTOMATION-012,AUTOMATION,AUTOMATION,Tester coupure n8n puis rattrapage sans doublon en staging,MAJOR,NOT_RUN,,,Assertion de recette spécifique — adapter preuves et tests au stack réel
+RE-OPERATIONS-001,OPERATIONS,OPERATIONS,Définir environnements isolés dev/staging/production,MAJOR,NOT_RUN,,,Assertion de recette spécifique — adapter preuves et tests au stack réel
+RE-OPERATIONS-002,OPERATIONS,OPERATIONS,"Verifier TLS, auth et protections de previews et services",BLOCKER,NOT_RUN,,,Assertion de recette spécifique — adapter preuves et tests au stack réel
+RE-OPERATIONS-003,OPERATIONS,OPERATIONS,Exécuter scan secrets et analyse des dépendances,BLOCKER,NOT_RUN,,,Assertion de recette spécifique — adapter preuves et tests au stack réel
+RE-OPERATIONS-004,OPERATIONS,OPERATIONS,Tester sauvegarde et restauration effective en staging,BLOCKER,NOT_RUN,,,Assertion de recette spécifique — adapter preuves et tests au stack réel
+RE-OPERATIONS-005,OPERATIONS,OPERATIONS,Contrôler logs sans données personnelles sensibles,BLOCKER,NOT_RUN,,,Assertion de recette spécifique — adapter preuves et tests au stack réel
+RE-OPERATIONS-006,OPERATIONS,OPERATIONS,"Verifier droits RGPD export, rectification et suppression",BLOCKER,NOT_RUN,,,Assertion de recette spécifique — adapter preuves et tests au stack réel
+RE-OPERATIONS-007,OPERATIONS,OPERATIONS,Verifier conformité juridique par approbation compétente,MAJOR,NOT_RUN,,,Assertion de recette spécifique — adapter preuves et tests au stack réel
+RE-OPERATIONS-008,OPERATIONS,OPERATIONS,Mettre en place monitoring et alerte incident significatif,MAJOR,NOT_RUN,,,Assertion de recette spécifique — adapter preuves et tests au stack réel
+RE-OPERATIONS-009,OPERATIONS,OPERATIONS,Définir rollback et point de retour versionné par release,MAJOR,NOT_RUN,,,Assertion de recette spécifique — adapter preuves et tests au stack réel
+RE-OPERATIONS-010,OPERATIONS,OPERATIONS,Empêcher déploiement prod sans accord explicite,BLOCKER,NOT_RUN,,,Assertion de recette spécifique — adapter preuves et tests au stack réel
+RE-OPERATIONS-011,OPERATIONS,OPERATIONS,Mesurer CWV/Lighthouse et vérifier a11y manuelle,NORMAL,NOT_RUN,,,Assertion de recette spécifique — adapter preuves et tests au stack réel
+RE-OPERATIONS-012,OPERATIONS,OPERATIONS,Rassembler preuves et obtenir GO/NO-GO indépendant,MAJOR,NOT_RUN,,,Assertion de recette spécifique — adapter preuves et tests au stack réel

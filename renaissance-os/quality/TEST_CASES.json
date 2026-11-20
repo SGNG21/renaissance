@@ -1,0 +1,332 @@
+[
+  {
+    "id": "AUTH01",
+    "title": "Séparation candidats A/B",
+    "actor": "candidate",
+    "procedure": "Créer A/B puis tenter accès croisé",
+    "expected": "Rejet 403/404, aucune fuite",
+    "severity": "BLOCKER",
+    "status": "NOT_RUN",
+    "environment": "NOT_SET"
+  },
+  {
+    "id": "AUTH02",
+    "title": "Formateur hors session",
+    "actor": "trainer",
+    "procedure": "Utiliser ID session non affectée",
+    "expected": "Aucun accès aux dossiers",
+    "severity": "BLOCKER",
+    "status": "NOT_RUN",
+    "environment": "NOT_SET"
+  },
+  {
+    "id": "AUTH03",
+    "title": "Externe vs cursus",
+    "actor": "external_professional",
+    "procedure": "Naviguer vers attestations tiers",
+    "expected": "Refus",
+    "severity": "BLOCKER",
+    "status": "NOT_RUN",
+    "environment": "NOT_SET"
+  },
+  {
+    "id": "AUTH04",
+    "title": "Élévation de rôle",
+    "actor": "candidate",
+    "procedure": "Poster role=president",
+    "expected": "Refus, journal",
+    "severity": "BLOCKER",
+    "status": "NOT_RUN",
+    "environment": "NOT_SET"
+  },
+  {
+    "id": "CAT01",
+    "title": "Catalogue 4 cursus",
+    "actor": "public",
+    "procedure": "Consulter formation/version",
+    "expected": "Informations validées uniquement",
+    "severity": "MAJOR",
+    "status": "NOT_RUN",
+    "environment": "NOT_SET"
+  },
+  {
+    "id": "CAT02",
+    "title": "Prix non approuvé",
+    "actor": "public",
+    "procedure": "Consulter cursus prix non confirmé",
+    "expected": "Prix non affiché comme confirmé",
+    "severity": "BLOCKER",
+    "status": "NOT_RUN",
+    "environment": "NOT_SET"
+  },
+  {
+    "id": "APP01",
+    "title": "Candidature interrompue",
+    "actor": "candidate",
+    "procedure": "Remplir 2 étapes, fermer et reprendre",
+    "expected": "Brouillon restauré en privé",
+    "severity": "MAJOR",
+    "status": "NOT_RUN",
+    "environment": "NOT_SET"
+  },
+  {
+    "id": "APP02",
+    "title": "Double soumission",
+    "actor": "candidate",
+    "procedure": "Double clic + retry HTTP",
+    "expected": "Un dossier logique",
+    "severity": "BLOCKER",
+    "status": "NOT_RUN",
+    "environment": "NOT_SET"
+  },
+  {
+    "id": "APP03",
+    "title": "Dernière place",
+    "actor": "candidate",
+    "procedure": "Deux candidats réservent simultanément",
+    "expected": "Une seule confirmation",
+    "severity": "BLOCKER",
+    "status": "NOT_RUN",
+    "environment": "NOT_SET"
+  },
+  {
+    "id": "APP04",
+    "title": "Refus et information manquante",
+    "actor": "office_admin",
+    "procedure": "Changer état depuis back-office",
+    "expected": "Transition traçable, notification correcte",
+    "severity": "MAJOR",
+    "status": "NOT_RUN",
+    "environment": "NOT_SET"
+  },
+  {
+    "id": "LMS01",
+    "title": "Cours et quiz",
+    "actor": "learner",
+    "procedure": "Suivre cours, échouer et retenter quiz",
+    "expected": "Tentatives distinctes et progression cohérente",
+    "severity": "MAJOR",
+    "status": "NOT_RUN",
+    "environment": "NOT_SET"
+  },
+  {
+    "id": "LMS02",
+    "title": "Édition cours versionné",
+    "actor": "trainer",
+    "procedure": "Modifier programme déjà associé session",
+    "expected": "Historique des apprenants intact",
+    "severity": "BLOCKER",
+    "status": "NOT_RUN",
+    "environment": "NOT_SET"
+  },
+  {
+    "id": "LMS03",
+    "title": "Attestation preuve",
+    "actor": "office_admin",
+    "procedure": "Générer document sans évaluation confirmée",
+    "expected": "Emission refusée si preuve requise",
+    "severity": "BLOCKER",
+    "status": "NOT_RUN",
+    "environment": "NOT_SET"
+  },
+  {
+    "id": "LMS04",
+    "title": "Sous-titres vidéo",
+    "actor": "learner",
+    "procedure": "Lire leçon vidéo au clavier",
+    "expected": "Transcription et commandes accessibles",
+    "severity": "MAJOR",
+    "status": "NOT_RUN",
+    "environment": "NOT_SET"
+  },
+  {
+    "id": "DIR01",
+    "title": "Inscription gratuite externe",
+    "actor": "external_professional",
+    "procedure": "Créer fiche sans compte stagiaire ni paiement",
+    "expected": "Compte + brouillon autorisés",
+    "severity": "BLOCKER",
+    "status": "NOT_RUN",
+    "environment": "NOT_SET"
+  },
+  {
+    "id": "DIR02",
+    "title": "Modération avant publication",
+    "actor": "external_professional",
+    "procedure": "Tenter public slug d’une fiche brouillon",
+    "expected": "Aucun contenu privé exposé",
+    "severity": "BLOCKER",
+    "status": "NOT_RUN",
+    "environment": "NOT_SET"
+  },
+  {
+    "id": "DIR03",
+    "title": "Usurpation signalée",
+    "actor": "moderator",
+    "procedure": "Signaler une fiche vérifiée puis suspendre",
+    "expected": "Journal et dépublication si décidé",
+    "severity": "MAJOR",
+    "status": "NOT_RUN",
+    "environment": "NOT_SET"
+  },
+  {
+    "id": "DIR04",
+    "title": "Déréférencement profil",
+    "actor": "external_professional",
+    "procedure": "Demander retrait d’une fiche publiée",
+    "expected": "Masquage puis retrait sitemap, journal",
+    "severity": "MAJOR",
+    "status": "NOT_RUN",
+    "environment": "NOT_SET"
+  },
+  {
+    "id": "ALU01",
+    "title": "Compte après formation",
+    "actor": "alumni",
+    "procedure": "Terminer formation puis se connecter",
+    "expected": "Documents et droits prévus conservés",
+    "severity": "BLOCKER",
+    "status": "NOT_RUN",
+    "environment": "NOT_SET"
+  },
+  {
+    "id": "ALU02",
+    "title": "Publication opt-in",
+    "actor": "alumni",
+    "procedure": "Terminer formation sans consentement annuaire",
+    "expected": "Aucune fiche publique créée",
+    "severity": "BLOCKER",
+    "status": "NOT_RUN",
+    "environment": "NOT_SET"
+  },
+  {
+    "id": "COM01",
+    "title": "Modération publication",
+    "actor": "moderator",
+    "procedure": "Supprimer post signalé selon droits",
+    "expected": "Preuve et audit conservés",
+    "severity": "MAJOR",
+    "status": "NOT_RUN",
+    "environment": "NOT_SET"
+  },
+  {
+    "id": "POL01",
+    "title": "Passage obligatoire support",
+    "actor": "learner",
+    "procedure": "Demander site depuis espace",
+    "expected": "Ticket support créé, pas direct POLIVIA",
+    "severity": "BLOCKER",
+    "status": "NOT_RUN",
+    "environment": "NOT_SET"
+  },
+  {
+    "id": "POL02",
+    "title": "Refus transfert",
+    "actor": "support",
+    "procedure": "Essayer transmettre ticket sans accord requis",
+    "expected": "Transfert refusé",
+    "severity": "BLOCKER",
+    "status": "NOT_RUN",
+    "environment": "NOT_SET"
+  },
+  {
+    "id": "POL03",
+    "title": "Payload minimale",
+    "actor": "support",
+    "procedure": "Transférer ticket approuvé",
+    "expected": "Aucune donnée pédagogique exportée",
+    "severity": "BLOCKER",
+    "status": "NOT_RUN",
+    "environment": "NOT_SET"
+  },
+  {
+    "id": "CRM01",
+    "title": "CRM indisponible",
+    "actor": "office_admin",
+    "procedure": "Couper adapter CRM pendant candidature",
+    "expected": "Dossier conservé + outbox",
+    "severity": "BLOCKER",
+    "status": "NOT_RUN",
+    "environment": "NOT_SET"
+  },
+  {
+    "id": "ERP01",
+    "title": "Webhook répété",
+    "actor": "office_admin",
+    "procedure": "Rejouer 2 fois succès paiement signé",
+    "expected": "Une seule facture/inscription logique",
+    "severity": "BLOCKER",
+    "status": "NOT_RUN",
+    "environment": "NOT_SET"
+  },
+  {
+    "id": "ERP02",
+    "title": "Webhook falsifié",
+    "actor": "office_admin",
+    "procedure": "Signer invalide sur paiement",
+    "expected": "Refus, alerte",
+    "severity": "BLOCKER",
+    "status": "NOT_RUN",
+    "environment": "NOT_SET"
+  },
+  {
+    "id": "N8N01",
+    "title": "Retry notification",
+    "actor": "office_admin",
+    "procedure": "Rejouer événement n8n",
+    "expected": "Pas de double email",
+    "severity": "MAJOR",
+    "status": "NOT_RUN",
+    "environment": "NOT_SET"
+  },
+  {
+    "id": "OPS01",
+    "title": "Restauration staging",
+    "actor": "technical_operator",
+    "procedure": "Restaurer sauvegarde en staging isolé",
+    "expected": "Données cohérentes, RPO constaté",
+    "severity": "BLOCKER",
+    "status": "NOT_RUN",
+    "environment": "NOT_SET"
+  },
+  {
+    "id": "OPS02",
+    "title": "A11y mobile",
+    "actor": "public",
+    "procedure": "Tabuler sur inscription mobile",
+    "expected": "Parcours utilisable sans souris",
+    "severity": "MAJOR",
+    "status": "NOT_RUN",
+    "environment": "NOT_SET"
+  },
+  {
+    "id": "OPS03",
+    "title": "Preview protégée",
+    "actor": "technical_operator",
+    "procedure": "Accès URL non authentifié",
+    "expected": "Preview non exposée",
+    "severity": "BLOCKER",
+    "status": "NOT_RUN",
+    "environment": "NOT_SET"
+  },
+  {
+    "id": "OPS04",
+    "title": "SEO profil non publié",
+    "actor": "public",
+    "procedure": "Crawler sitemap/robots",
+    "expected": "Profil privé absent et non-indexé",
+    "severity": "BLOCKER",
+    "status": "NOT_RUN",
+    "environment": "NOT_SET"
+  },
+  {
+    "id": "OPS05",
+    "title": "Journal sans PII",
+    "actor": "technical_operator",
+    "procedure": "Inspecter log candidature/erreur",
+    "expected": "Aucun secret ni pièce sensible",
+    "severity": "BLOCKER",
+    "status": "NOT_RUN",
+    "environment": "NOT_SET"
+  }
+]

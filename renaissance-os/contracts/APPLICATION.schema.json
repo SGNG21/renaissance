@@ -1,0 +1,67 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://renaissance.local/contracts/APPLICATION.schema.json",
+  "title": "APPLICATION",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "id": {
+      "type": "string",
+      "format": "uuid"
+    },
+    "session_id": {
+      "type": "string",
+      "format": "uuid"
+    },
+    "person_id": {
+      "type": "string",
+      "format": "uuid"
+    },
+    "status": {
+      "enum": [
+        "draft",
+        "submitted",
+        "under_review",
+        "needs_info",
+        "accepted",
+        "rejected",
+        "waitlisted",
+        "enrolled",
+        "withdrawn",
+        "completed"
+      ]
+    },
+    "source": {
+      "enum": [
+        "web",
+        "admin",
+        "import"
+      ]
+    },
+    "submitted_at": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "format": "date-time"
+    },
+    "updated_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "consent_reference": {
+      "type": [
+        "string",
+        "null"
+      ]
+    }
+  },
+  "required": [
+    "id",
+    "session_id",
+    "person_id",
+    "status",
+    "source",
+    "updated_at"
+  ]
+}

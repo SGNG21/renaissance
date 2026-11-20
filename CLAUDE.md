@@ -36,3 +36,24 @@ Next.js (App Router) + React + TypeScript strict · Tailwind v4 + shadcn (écrit
 - Images de la maquette = placeholders IA → extraire en WebP (next/image), signaler comme placeholders. Retirer les mentions « démonstration graphique ».
 - Comptes Vercel/Supabase sur le compte POLIVIA pour le build, transfert au client avant lancement (art. 4.1).
 - Logo = wordmark provisoire en Italiana, remplacé plus tard (label à trancher).
+
+
+## Programme Renaissance OS (vision long terme — 2026-11-20)
+
+Un pack de planification plus large que l'Étape 1 a été reçu et versionné
+dans `renaissance-os/` (provenance et statut : `renaissance-os/README-PROVENANCE.md`).
+Il décrit un programme en 18 lots (CRM/ERP, LMS, annuaire national, communauté,
+automatisations) **non encore lancé, non chiffré comme nouvelle phase**.
+
+Règles pour ce programme :
+- Ne pas confondre avec l'Étape 1 ci-dessus, qui reste la référence du
+  périmètre livré et signé.
+- Les agents/skills/CLAUDE.md proposés dans le pack ne sont PAS installés :
+  ils restent en réference dans `renaissance-os/claude-pack-reference/`.
+- Frappe CRM/ERPNext/n8n pour Renaissance sont à construire en open source,
+  sur un hébergement restant à choisir et à financer par le commanditaire —
+  aucune instance n'existe en ligne à ce jour.
+- Avant tout code sur ce programme : vérifier avec preuves (pas de
+  supposition) chaque brique déclarée, documenter en ADR, et ne lancer un lot
+  qu'après validation explicite du commanditaire sur son périmètre et son
+  hébergement.

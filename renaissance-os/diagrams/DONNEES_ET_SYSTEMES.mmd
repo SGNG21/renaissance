@@ -1,0 +1,13 @@
+flowchart TB
+  Identity[Identité Renaissance] --> Rbac[Politique rôles]
+  Rbac --> Enrollment[Inscriptions / sessions]
+  Enrollment --> LMS[LMS - cours / progrès]
+  Enrollment --> ERP[ERPNext - finance]
+  Enrollment --> CRM[Frappe CRM - opportunités]
+  Rbac --> Directory[Annuaire - source Renaissance]
+  Rbac --> Forum[Communauté - moteur séparé]
+  Rbac --> Support[Support Renaissance]
+  Support --> Referral[POLIVIA - statut minimal]
+  Enrollment --> Audit[Audit & preuves]
+  Directory --> Audit
+  ERP --> Audit

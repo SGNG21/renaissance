@@ -1,0 +1,75 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://renaissance.local/contracts/SESSION.schema.json",
+  "title": "SESSION",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "id": {
+      "type": "string",
+      "format": "uuid"
+    },
+    "course_id": {
+      "type": "string",
+      "format": "uuid"
+    },
+    "course_version": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "start_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "end_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "capacity_min": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "capacity_max": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "confirmed_count": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "status": {
+      "enum": [
+        "draft",
+        "scheduled",
+        "open",
+        "full",
+        "in_progress",
+        "completed",
+        "archived",
+        "cancelled"
+      ]
+    },
+    "location_display": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "updated_at": {
+      "type": "string",
+      "format": "date-time"
+    }
+  },
+  "required": [
+    "id",
+    "course_id",
+    "course_version",
+    "start_at",
+    "end_at",
+    "capacity_min",
+    "capacity_max",
+    "confirmed_count",
+    "status",
+    "updated_at"
+  ]
+}

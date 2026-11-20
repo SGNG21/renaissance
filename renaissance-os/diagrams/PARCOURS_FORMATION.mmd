@@ -1,0 +1,16 @@
+flowchart LR
+  V[Visiteur] --> F[Choix formation]
+  F --> A[Candidature]
+  A --> D{Dossier complet?}
+  D -->|non| A
+  D -->|oui| R[Revue administrative]
+  R --> C{Accepté / capacité?}
+  C -->|non| W[Refus / attente]
+  C -->|oui| E[Inscription confirmée]
+  E --> L[Campus LMS]
+  L --> P[Présence et évaluations]
+  P --> T[Clôture et attestation]
+  T --> AL[Compte alumni maintenu]
+  AL --> AN[Annuaire gratuit sur demande]
+  AL --> CO[Communauté selon droits]
+  AL --> SU[Support demande de site]

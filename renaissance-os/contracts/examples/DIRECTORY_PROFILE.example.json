@@ -1,0 +1,15 @@
+{
+  "id": "00000000-0000-4000-8000-000000000005",
+  "owner_id": "00000000-0000-4000-8000-000000000004",
+  "display_name": "Professionnel de démonstration",
+  "category_slug": "aide-domicile",
+  "description": "Exemple fictif, ne pas indexer ni publier",
+  "city": "Ville fictive",
+  "postal_code": null,
+  "service_areas": [],
+  "verification_state": "unverified",
+  "publication_state": "draft",
+  "training_renaissance_required": false,
+  "visibility_consent": false,
+  "updated_at": "2026-11-20T12:00:00+01:00"
+}

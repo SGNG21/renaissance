@@ -1,0 +1,15 @@
+{
+  "id": "00000000-0000-4000-8000-000000000006",
+  "type": "candidate.submitted",
+  "version": 1,
+  "occurred_at": "2026-11-20T12:00:00+01:00",
+  "correlation_id": "00000000-0000-4000-8000-000000000007",
+  "source": "renaissance-demo",
+  "entity_id": "00000000-0000-4000-8000-000000000003",
+  "idempotency_key": "DEMO-ONLY-0001",
+  "data_classification": "internal",
+  "payload": {
+    "demo": true
+  },
+  "simulation": true
+}

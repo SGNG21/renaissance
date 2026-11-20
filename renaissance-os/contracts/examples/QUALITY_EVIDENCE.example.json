@@ -1,0 +1,11 @@
+{
+  "id": "00000000-0000-4000-8000-000000000010",
+  "test_id": "RE-SEC-001",
+  "commit_sha": null,
+  "environment": "isolated",
+  "result": "NOT_RUN",
+  "executed_at": "2026-11-20T12:00:00+01:00",
+  "command_or_method": "NON EXÉCUTÉ — exemple de structure",
+  "reviewer": null,
+  "artifact_ref": null
+}
